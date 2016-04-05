@@ -1,3 +1,4 @@
+<h1 class="page-header">Metal Maidens list</h1>
 <?php
 $col_num = 8;
 

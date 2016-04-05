@@ -25,5 +25,7 @@
 	</head>
 	<body>
 		<?php include("view/layout/header.php"); ?>
-		<div id="main-wrapper">
-			<section id="main">
+		<div class="container-fluid">
+			<div class="row">
+				<?php include("view/layout/sidebar.php"); ?>
+				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
