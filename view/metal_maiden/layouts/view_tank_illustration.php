@@ -1,6 +1,6 @@
-<?php
-if (isset($tank))
-{
+<div class="col-lg-10 col-lg-offset-1">
+	<h4>Illustration :</h4>
+	<?php
 	$filename  = "resources/metal_maidens/";
 	$filename .= "full/";
 	$filename .= $tank->getImagename();
@@ -8,7 +8,7 @@ if (isset($tank))
 
 	if (file_exists(utf8_decode($filename)))
 	{
-		echo '<img src="'.$filename.'" alt="'.$tank->getTank().' full illustration" />';
+		echo '<img src="'.$filename.'" alt="'.$tank->getTank().' full illustration" class="img-responsive" />';
 	}
-}
-?>
+	?>
+</div>

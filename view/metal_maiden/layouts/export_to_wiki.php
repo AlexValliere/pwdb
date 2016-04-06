@@ -1,5 +1,5 @@
 <button type="button" onClick="setVisibility();">Export to wiki</button>
-<pre id="export_to_wiki" style="display: none;">
+<pre id="export_to_wiki" style="display: none;" class="wiki">
 {{Infobox_Metal_Maiden_Profile
  | model                                        = <?php echo $tank->getTank() . "<br />"; ?>
  | name                                                = <?php echo $tank->getName() . "<br />"; ?>

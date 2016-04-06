@@ -148,6 +148,94 @@ class MetalMaiden
 		return $i;
 	}
 
+	public function getQuote($quote_name) {
+		switch ($quote_name) {
+			case 'intro':
+				return $this->_quote_intro;
+				break;
+
+			case 'main1':
+				return $this->_quote_main_screen_1;
+				break;
+			
+			case 'main2':
+				return $this->_quote_main_screen_2;
+				break;
+
+			case 'main3':
+				return $this->_quote_main_screen_3;
+				break;
+
+			case 'main4':
+				return $this->_quote_main_screen_4;
+				break;
+
+			case 'main5':
+				return $this->_quote_main_screen_5;
+				break;
+
+			case 'attacking':
+				return $this->_quote_attacking;
+				break;
+
+			case 'upgrading':
+				return $this->_quote_upgrading;
+				break;
+
+			default:
+				return "";
+				break;
+		}
+	}
+
+	public function getStatistics($statistic_name) {
+		switch ($statistic_name) {
+			case 'penetration':
+				return $this->_penetration;
+				break;
+
+			case 'firepower':
+				return $this->_firepower;
+				break;
+			
+			case 'durability':
+				return $this->_durability;
+				break;
+
+			case 'armor':
+				return $this->_armor;
+				break;
+
+			case 'targeting':
+				return $this->_targeting;
+				break;
+
+			case 'evasion':
+				return $this->_evasion;
+				break;
+
+			case 'stealth':
+				return $this->_stealth;
+				break;
+
+			case 'detection':
+				return $this->_detection;
+				break;
+
+			case 'min_range':
+				return $this->_min_range;
+				break;
+
+			case 'max_range':
+				return $this->_max_range;
+				break;
+
+			default:
+				return "";
+				break;
+		}
+	}
+
 	public function getAmmo_desc() {
 		$ammo_desc = array(
 			"ap"	=> "<span style='color: orange;'>[AP]</span> Conventional",

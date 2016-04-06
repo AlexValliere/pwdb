@@ -1,93 +1,32 @@
-<table class="view_tank">
-<tr>
-	<th colspan="2" >Quote</th>
-</tr>
-<tr>
-	<td>Intro</td>
-	<td>
+<div class="table-responsive">
+	<?php
+	$quote_array = array(
+		"intro"		=> "Intro",
+		"main1"		=> "Main screen #1",
+		"main2"		=> "Main screen #2",
+		"main3"		=> "Main screen #3",
+		"main4"		=> "Main screen #4",
+		"main5"		=> "Main screen #5",
+		"upgrading"	=> "On upgrade",
+		"attacking"	=> "On attack"
+	);
+	?>
+	<p><strong>Quotes</strong></p>
+	<table class="table table-condensed">
+		<tr>
+			<th>From</th>
+			<th>Quote</th>
+		</tr>
 		<?php
-		if ($tank->getQuote_intro() == "null")
-			echo '<span style="color: Crimson">No quote</span>';
-		else
-			echo $tank->getQuote_intro();
-		?>
-	</td>
-</tr>
-<tr>
-	<td>Main game screen #1</td>
-	<td>
-		<?php
-		if ($tank->getQuote_main_screen_1() == "null")
-			echo '<span style="color: Crimson">No quote</span>';
-		else
-			echo $tank->getQuote_main_screen_1();
-		?>
-	</td>
-</tr>
-<tr>
-	<td>Main game screen #2</td>
-	<td>
-		<?php
-		if ($tank->getQuote_main_screen_2() == "null")
-			echo '<span style="color: Crimson">No quote</span>';
-		else
-			echo $tank->getQuote_main_screen_2();
-		?>
-	</td>
-</tr>
-<tr>
-	<td>Main game screen #3</td>
-	<td>
-		<?php
-		if ($tank->getQuote_main_screen_3() == "null")
-			echo '<span style="color: Crimson">No quote</span>';
-		else
-			echo $tank->getQuote_main_screen_3();
-		?>
-	</td>
-</tr>
-<tr>
-	<td>Main game screen #4</td>
-	<td>
-		<?php
-		if ($tank->getQuote_main_screen_4() == "null")
-			echo '<span style="color: Crimson">No quote</span>';
-		else
-			echo $tank->getQuote_main_screen_4();
-		?>
-	</td>
-</tr>
-<tr>
-	<td>Main game screen #5</td>
-	<td>
-		<?php
-		if ($tank->getQuote_main_screen_5() == "null")
-			echo '<span style="color: Crimson">No quote</span>';
-		else
-			echo $tank->getQuote_main_screen_5();
-		?>
-	</td>
-</tr>
-<tr>
-	<td>Upgrading</td>
-	<td>
-		<?php
-		if ($tank->getQuote_upgrading() == "null")
-			echo '<span style="color: Crimson">No quote</span>';
-		else
-			echo $tank->getQuote_upgrading();
-		?>
-	</td>
-</tr>
-<tr>
-	<td>Attacking</td>
-	<td>
-		<?php
-		if ($tank->getQuote_attacking() == "null")
-			echo '<span style="color: Crimson">No quote</span>';
-		else
-			echo $tank->getQuote_attacking();
-		?>
-	</td>
-</tr>
-</table>
+			foreach ($quote_array as $quote_index => $quote)
+			{
+				?>
+				<tr>
+					<td><?php echo $quote; ?></td>
+					<td><?php echo $tank->getQuote($quote_index); ?></td>
+				</tr>
+				<?php
+			}
+			?>
+	</table>
+</div>
