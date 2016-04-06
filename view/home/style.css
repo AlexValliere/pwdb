@@ -1,54 +1,34 @@
-section#metal_maidens_index
-{
-
-}
-
-#metal_maidens_index .nation
-{
+#metal_maidens_index .nation		{
 	text-align: center;
 	font-size: x-large;
 	background-color: #000000;
 }
+#metal_maidens_index .nation img	{ width: 75px; }
 
-#metal_maidens_index .nation img
-{
-	width: 75px;
+#metal_maidens_index img.portrait	{
+	border: 1px ridge #223F58;
+	height: 100px;
 }
-
-#metal_maidens_index img.portrait			{ border: 1px ridge #223F58; height: 100px; }
 #metal_maidens_index img.portrait.blue		{ border: 1px ridge #2058FF; }
 #metal_maidens_index img.portrait.purple	{ border: 1px ridge #C500C5; }
 #metal_maidens_index img.portrait.gold		{ border: 1px ridge gold; }
 
-#metal_maidens_index .metal_maiden_block
-{
+#metal_maidens_index .metal_maiden_block {
 	text-align: center;
 	min-height: 156px;
 }
 
-#metal_maidens_index .category-block div.category-icon
-{
-	text-align: center;
-}
-
-#metal_maidens_index .category-block img.category-icon
-{
-	height: 50px;
-	margin: 20px 0; 
-}
-
-#metal_maidens_index .category-block:first-child
-{
-	border-top: 1px solid #000000;
-}
-
-#metal_maidens_index .category-block
-{
+#metal_maidens_index .category-block:first-child	{ border-top: 1px solid #000000; }
+#metal_maidens_index .category-block				{
 	border-right: 1px solid #000000;
 	border-bottom: 1px solid #000000;
 	border-left: 1px solid #000000;
 }
-
+#metal_maidens_index .category-block div.category-icon	{ text-align: center; }
+#metal_maidens_index .category-block img.category-icon	{
+	height: 50px;
+	margin: 20px 0;
+}
 #metal_maidens_index .category-block.atg	{ background-color: rgba(255, 120, 255, 0.05); }
 #metal_maidens_index .category-block.ht		{ background-color: rgba(120, 5, 255, 0.05); }
 #metal_maidens_index .category-block.lav	{ background-color: rgba(25, 255, 255, 0.05); }
@@ -60,42 +40,4 @@ section#metal_maidens_index
 #metal_maidens_index .metal_maiden_block p.blue		{ color: #88CDFF; }
 #metal_maidens_index .metal_maiden_block p.purple	{ color: #DA24DA; }
 #metal_maidens_index .metal_maiden_block p.gold		{ color: #FFB426; }
-#metal_maidens_index .metal_maiden_block a:hover {
-	text-decoration: none;
-}
-
-
-table.metal_maidens_index, table.metal_maidens_index th, table.metal_maidens_index td
-{
-	border: 1px solid black;
-}
-
-table.metal_maidens_index
-{
-	width: 1000px;
-	margin: auto;
-}
-
-table.metal_maidens_index th
-{
-	background-color: black;
-	font-size: 135%;
-}
-
-table.metal_maidens_index td
-{
-	width: 12.5%;
-	text-align: center;
-	padding: 15px 0;
-}
-
-td.atg	{ background-color: rgba(255, 120, 255, 0.05); }
-td.ht	{ background-color: rgba(120, 5, 255, 0.05); }
-td.lav	{ background-color: rgba(25, 255, 255, 0.05); }
-td.lt	{ background-color: rgba(10, 170, 0, 0.05); }
-td.mt	{ background-color: rgba(255, 255, 30, 0.05); }
-td.spg	{ background-color: rgba(255, 80, 0, 0.05); }
-
-table.metal_maidens_index td a.blue		{ color: #6495ed; }
-table.metal_maidens_index td a.purple	{ color: #9370db; }
-table.metal_maidens_index td a.gold		{ color: gold; }
+#metal_maidens_index .metal_maiden_block a:hover	{ text-decoration: none; }
