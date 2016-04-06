@@ -39,7 +39,7 @@ $tank_list = $metalMaidensManager->getCategory_nation_list("ht", "britannia");
 					<?php
 
 					$tank_list = $metalMaidensManager->getCategory_nation_list($category, $nation);
-					$i = 1;
+
 					foreach ($tank_list as $tank)
 					{
 						?>
@@ -57,7 +57,6 @@ $tank_list = $metalMaidensManager->getCategory_nation_list("ht", "britannia");
 							</a>
 						</div>
 						<?php
-						++$i;
 					}
 					?>
 				</div>
