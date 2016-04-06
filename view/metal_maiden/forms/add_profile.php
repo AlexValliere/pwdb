@@ -1,22 +1,31 @@
 <fieldset>
-	<legend>Profile</legend>
-		<p>
-			<label for="tank">Tank :</label>
-			<input type="text" name="tank" id="tank" placeholder="Ex : Churchill Mk-I" size="30" maxlength="30"
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-3">
+			<legend>Profile</legend>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="tank" class="col-sm-2 col-sm-offset-3 control-label">Tank :</label>
+		<div class="col-sm-2">
+			<input type="text" name="tank" id="tank" placeholder="Ex : Churchill Mk-I" maxlength="30" class="form-control"
 			<?php if (isset($tank)) echo 'value="' . $tank->getTank() . '"'; ?>
 			/>
-		</p>
+		</div>
+	</div>
 
-		<p>
-			<label for="name">Name :</label>
-			<input type="text" name="name" id="name" placeholder="Ex : Camilla Beck" size="30" maxlength="30"
+	<div class="form-group">
+		<label for="name" class="col-sm-2 col-sm-offset-3 control-label">Name :</label>
+		<div class="col-sm-2">
+			<input type="text" name="name" id="name" placeholder="Ex : Camilla Beck" class="form-control"
 			<?php if (isset($tank)) echo 'value="' . $tank->getName() . '"'; ?>
 			/>
-		</p>
+		</div>
+	</div>
 
-		<p>
-			<label for="category">Category :</label>
-				<select name="category" id="category">
+	<div class="form-group">
+		<label for="category" class="col-sm-2 col-sm-offset-3 control-label">Category :</label>
+		<div class="col-sm-2">
+			<select name="category" id="category" multiple class="form-control">
 				<option value="atg"
 				<?php if (isset($tank) && $tank->getCategory() == "atg") echo 'selected="selected"'; ?>
 				>AnTi-Gun</option>
@@ -36,11 +45,13 @@
 				<?php if (isset($tank) && $tank->getCategory() == "spg") echo 'selected="selected"'; ?>
 				>Self Propelled Gun</option>
 			</select>
-		</p>
+		</div>
+	</div>
 
-		<p>
-			<label for="nation">Nation :</label>
-				<select name="nation" id="nation">
+	<div class="form-group">
+		<label for="nation" class="col-sm-2 col-sm-offset-3 control-label">Nation :</label>
+		<div class="col-sm-2">
+			<select name="nation" id="nation" multiple class="form-control">
 				<option value="bavaria"
 				<?php if (isset($tank) && $tank->getNation() == "bavaria") echo 'selected="selected"'; ?>
 				>Bavaria</option>
@@ -57,11 +68,13 @@
 				<?php if (isset($tank) && $tank->getNation() == "rossiya") echo 'selected="selected"'; ?>
 				>Rossiya</option>
 			</select>
-		</p>
+		</div>
+	</div>
 
-		<p>
-			<label for="rarity">Rarity :</label>
-				<select name="rarity" id="rarity">
+	<div class="form-group">
+		<label for="rarity" class="col-sm-2 col-sm-offset-3 control-label">Rarity :</label>
+		<div class="col-sm-2">
+			<select name="rarity" id="rarity" multiple class="form-control">
 				<option value="blue"
 				<?php if (isset($tank) && $tank->getRarity() == "blue") echo 'selected="selected"'; ?>
 				>Blue</option>
@@ -72,25 +85,30 @@
 				<?php if (isset($tank) && $tank->getRarity() == "gold") echo 'selected="selected"'; ?>
 				>Gold</option>
 			</select>
-		</p>
+		</div>
+	</div>
 
-		<p>
-			<label for="character_voice">Character voice :</label>
-			<input type="text" name="character_voice" id="character_voice" placeholder="Ex : Megumi Han" size="30" maxlength="30"
+	<div class="form-group">
+		<label for="character_voice" class="col-sm-2 col-sm-offset-3 control-label">Character voice :</label>
+		<div class="col-sm-2">
+			<input type="text" name="character_voice" id="character_voice" placeholder="Ex : Megumi Han" class="form-control"
 			<?php if (isset($tank)) echo 'value="' . $tank->getCharacter_voice() . '"'; ?>
 			/>
-		</p>
+		</div>
+	</div>
 
-		<p>
-			<label for="live2d">Live2D availibility :</label><br />
-			<input type="radio" name="live2d" value="null" id="null"
+	<div class="form-group">
+		<label for="live2d" class="col-sm-2 col-sm-offset-3 control-label">Live2D availibility :</label>
+		<div class="col-sm-2">
+			<label class="radio-inline" for="null"><input type="radio" name="live2d" value="null" id="null"
 			<?php if (isset($tank) && $tank->getLive2d() == "null") echo 'checked="checked"'; elseif (!isset($tank)) echo 'checked="checked"'; ?>
-			/> <label for="null">(empty)</label><br />
-			<input type="radio" name="live2d" value="1" id="true"
+			/> (empty)</label><br />
+			<label class="radio-inline" for="true"><input type="radio" name="live2d" value="1" id="true"
 			<?php if (isset($tank) && $tank->getLive2d() == "1") echo 'checked="checked"'; ?>
-			/> <label for="true">Available</label><br />
-			<input type="radio" name="live2d" value="0" id="false"
+			/> Available</label><br />
+			<label class="radio-inline" for="false"><input type="radio" name="live2d" value="0" id="false"
 			<?php if (isset($tank) && $tank->getLive2d() == "0") echo 'checked="checked"'; ?>
-			/> <label for="false">Not available</label>
-		</p>
+			/> Not available</label>
+		</div>
+	</div>
 </fieldset>

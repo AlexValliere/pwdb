@@ -1,14 +1,14 @@
 <div class="table-responsive">
 	<?php
 	$quote_array = array(
-		"intro"		=> "Intro",
-		"main1"		=> "Main screen #1",
-		"main2"		=> "Main screen #2",
-		"main3"		=> "Main screen #3",
-		"main4"		=> "Main screen #4",
-		"main5"		=> "Main screen #5",
-		"upgrading"	=> "On upgrade",
-		"attacking"	=> "On attack"
+		"quote_intro"			=> "Intro",
+		"quote_main_screen_1"	=> "Main screen #1",
+		"quote_main_screen_2"	=> "Main screen #2",
+		"quote_main_screen_3"	=> "Main screen #3",
+		"quote_main_screen_4"	=> "Main screen #4",
+		"quote_main_screen_5"	=> "Main screen #5",
+		"quote_upgrading"		=> "On upgrade",
+		"quote_attacking"		=> "On attack"
 	);
 	?>
 	<p><strong>Quotes</strong></p>

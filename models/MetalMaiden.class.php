@@ -150,35 +150,35 @@ class MetalMaiden
 
 	public function getQuote($quote_name) {
 		switch ($quote_name) {
-			case 'intro':
+			case 'quote_intro':
 				return $this->_quote_intro;
 				break;
 
-			case 'main1':
+			case 'quote_main_screen_1':
 				return $this->_quote_main_screen_1;
 				break;
 			
-			case 'main2':
+			case 'quote_main_screen_2':
 				return $this->_quote_main_screen_2;
 				break;
 
-			case 'main3':
+			case 'quote_main_screen_3':
 				return $this->_quote_main_screen_3;
 				break;
 
-			case 'main4':
+			case 'quote_main_screen_4':
 				return $this->_quote_main_screen_4;
 				break;
 
-			case 'main5':
+			case 'quote_main_screen_5':
 				return $this->_quote_main_screen_5;
 				break;
 
-			case 'attacking':
+			case 'quote_attacking':
 				return $this->_quote_attacking;
 				break;
 
-			case 'upgrading':
+			case 'quote_upgrading':
 				return $this->_quote_upgrading;
 				break;
 
