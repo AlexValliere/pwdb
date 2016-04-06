@@ -1,3 +1,4 @@
+					<br />
 					<?php include("view/layout/footer.php"); ?>
 				</div>
 			</div>

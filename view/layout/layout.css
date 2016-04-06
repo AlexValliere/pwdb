@@ -1,0 +1,9 @@
+body {
+	background-color: #1c1c1c;
+	color: #ffffff;
+}
+
+.sidebar {
+	background-color: #222222;
+	border-right: 1px solid #000000;
+}

@@ -27,5 +27,5 @@
 		<?php include("view/layout/header.php"); ?>
 		<div class="container-fluid">
 			<div class="row">
-				<?php include("view/layout/sidebar.php"); ?>
-				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<?php // include("view/layout/sidebar.php"); set <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"> ?>
+				<div class="col-sm-12 col-md-12 main">
