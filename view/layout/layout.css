@@ -7,3 +7,15 @@ body {
 	background-color: #222222;
 	border-right: 1px solid #000000;
 }
+
+ol.breadcrumb {
+	background-color: #009688;
+}
+
+ol.breadcrumb li a {
+	color: #000000;
+}
+
+ol.breadcrumb li.active {
+	color: #FFFFFF;
+}
