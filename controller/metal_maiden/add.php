@@ -113,6 +113,8 @@ if ($method == 'POST')
 	$metalMaidensManager = new MetalMaidensManager($dbhandler);
 	$metalMaidensManager->add($metalMaiden);
 
+	redirection('index.php?route=metal_maiden&tank=' . $metalMaiden->getTank_slug(), 250);
+
 	if (VERBOSE)
 		echo var_dump($metalMaiden);
 }
