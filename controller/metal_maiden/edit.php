@@ -74,14 +74,14 @@ if ($method == 'POST' && isset($_POST["edit_tank"]))
 		$evasion = $_POST["evasion"];
 		$min_range = $_POST["min_range"];
 		$max_range = $_POST["max_range"];
-		$quote_intro = $_POST["quote_intro"];
-		$quote_main_screen_1 = $_POST["quote_main_screen_1"];
-		$quote_main_screen_2 = $_POST["quote_main_screen_2"];
-		$quote_main_screen_3 = $_POST["quote_main_screen_3"];
-		$quote_main_screen_4 = $_POST["quote_main_screen_4"];
-		$quote_main_screen_5 = $_POST["quote_main_screen_5"];
-		$quote_upgrading = $_POST["quote_upgrading"];
-		$quote_attacking = $_POST["quote_attacking"];
+		$quote_intro = is_string($_POST["quote_intro"]) ? trim($_POST["quote_intro"]) : "";
+		$quote_main_screen_1 = is_string($_POST["quote_main_screen_1"]) ? trim($_POST["quote_main_screen_1"]) : "";
+		$quote_main_screen_2 = is_string($_POST["quote_main_screen_2"]) ? trim($_POST["quote_main_screen_2"]) : "";
+		$quote_main_screen_3 = is_string($_POST["quote_main_screen_3"]) ? trim($_POST["quote_main_screen_3"]) : "";
+		$quote_main_screen_4 = is_string($_POST["quote_main_screen_4"]) ? trim($_POST["quote_main_screen_4"]) : "";
+		$quote_main_screen_5 = is_string($_POST["quote_main_screen_5"]) ? trim($_POST["quote_main_screen_5"]) : "";
+		$quote_upgrading = is_string($_POST["quote_upgrading"]) ? trim($_POST["quote_upgrading"]) : "";
+		$quote_attacking = is_string($_POST["quote_attacking"]) ? trim($_POST["quote_attacking"]) : "";
 
 		$metalMaiden->setName($name);
 		$metalMaiden->setTank($tank);
