@@ -45,11 +45,11 @@
 			for ($i = 1; $i <= 8; $i++)
 			{
 				?>
-				<label for="slot_<?php echo $i; ?>" class="col-sm-1 control-label">Slot <?php echo $i; ?> :</label>
+				<label for="equipment_slot_<?php echo $i; ?>" class="col-sm-1 control-label">Slot <?php echo $i; ?> :</label>
 				<div class="col-sm-2">
-					<select name="slot_1" id="slot_<?php echo $i; ?>" class="form-control">
+					<select name="equipment_slot_<?php echo $i; ?>" id="equipment_slot_<?php echo $i; ?>" class="form-control">
 						<option value="null"
-						<?php if (isset($tank) && $tank->getEquipment_slots()["slot_" . $i] == "null") echo 'selected="selected"'; ?>
+						<?php if (!isset($tank) || (isset($tank) && $tank->getEquipment_slots()["slot_" . $i] == "null")) echo 'selected="selected"'; ?>
 						>(empty)</option>
 						<option value="turret"
 						<?php if (isset($tank) && $tank->getEquipment_slots()["slot_" . $i] == "turret") echo 'selected="selected"'; ?>

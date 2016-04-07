@@ -14,7 +14,7 @@
 			<div class="col-sm-2">
 				<select name="lifestyle_skill_<?php echo $i; ?>" id="lifestyle_skill_<?php echo $i; ?>" multiple class="form-control">
 					<option value="null"
-					<?php if (isset($tank) && $tank->getLifestyle_skills()["skill_" . $i] == "null") echo 'selected="selected"'; ?>
+					<?php if ((isset($tank) && $tank->getLifestyle_skills()["skill_" . $i] == "null") || !isset($tank)) echo 'selected="selected"'; ?>
 					>(empty)</option>
 					<option value="artistry"
 					<?php if (isset($tank) && $tank->getLifestyle_skills()["skill_" . $i] == "artistry") echo 'selected="selected"'; ?>
