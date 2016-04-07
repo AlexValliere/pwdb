@@ -23,7 +23,7 @@
 		<label for="targeting" class="col-sm-1 control-label">Targeting :</label>
 		<div class="col-sm-1">
 			<input type="number" name="targeting" id="targeting" min="0" max="99999" step="1" class="form-control"
-			value="<?php if (isset($tank)) echo $tank->getPenetration(); else echo "0"; ?>"
+			value="<?php if (isset($tank)) echo $tank->getTargeting(); else echo "0"; ?>"
 			/>
 		</div>
 	</div>
