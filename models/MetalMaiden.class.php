@@ -329,19 +329,6 @@ class MetalMaiden
 			{
 				if (is_array($ammo))
 					$this->_ammo = $ammo;
-				else
-				{
-					$ammo = explode(",", $ammo);
-					$this->_ammo = array(
-						"ap"	=> $ammo[0],
-						"apcr"	=> $ammo[1],
-						"apds"	=> $ammo[2],
-						"he"	=> $ammo[3],
-						"heat"	=> $ammo[4],
-						"hesh"	=> $ammo[5],
-						"rp"	=> $ammo[6]
-					);
-				}
 			}
 		}
 		else
@@ -361,18 +348,6 @@ class MetalMaiden
 			{
 				if (is_array($lifestyle_skills))
 					$this->_lifestyle_skills = $lifestyle_skills;
-				else
-				{
-					$lifestyle_skills = explode(",", $lifestyle_skills);
-					$this->_lifestyle_skills = array(
-						"skill_1"	=> $lifestyle_skills[0],
-						"skill_1_level"	=> $lifestyle_skills[1],
-						"skill_2"	=> $lifestyle_skills[2],
-						"skill_2_level"	=> $lifestyle_skills[3],
-						"skill_3"	=> $lifestyle_skills[4],
-						"skill_3_level"	=> $lifestyle_skills[5]
-					);
-				}
 			}
 		}
 		else
@@ -392,20 +367,6 @@ class MetalMaiden
 			{
 				if (is_array($equipment_slots))
 					$this->_equipment_slots = $equipment_slots;
-				else
-				{
-					$equipment_slots = explode(",", $equipment_slots);
-					$this->_equipment_slots = array(
-						"slot_1"	=> $equipment_slots[0],
-						"slot_2"	=> $equipment_slots[1],
-						"slot_3"	=> $equipment_slots[2],
-						"slot_4"	=> $equipment_slots[3],
-						"slot_5"	=> $equipment_slots[4],
-						"slot_6"	=> $equipment_slots[5],
-						"slot_7"	=> $equipment_slots[6],
-						"slot_8"	=> $equipment_slots[7]
-					);
-				}
 			}
 		}
 		else
@@ -425,18 +386,6 @@ class MetalMaiden
 			{
 				if (is_array($engine_bonus))
 					$this->_engine_bonus = $engine_bonus;
-				else
-				{
-					$engine_bonus = explode(",", $engine_bonus);
-					$this->_engine_bonus = array(
-						"c_proof"	=> $engine_bonus[0],
-						"d_proof"	=> $engine_bonus[1],
-						"h_proof"	=> $engine_bonus[2],
-						"s_proof"	=> $engine_bonus[3],
-						"w_proof"	=> $engine_bonus[4],
-						"silent"	=> $engine_bonus[5]
-					);
-				}
 			}
 		}
 		else
@@ -456,21 +405,6 @@ class MetalMaiden
 			{
 				if (is_array($chassis_bonus))
 					$this->_chassis_bonus = $chassis_bonus;
-				else
-				{
-					$chassis_bonus = explode(",", $chassis_bonus);
-					$this->_chassis_bonus = array(
-						"angled"	=> $chassis_bonus[0],
-						"flat_top"	=> $chassis_bonus[1],
-						"front"		=> $chassis_bonus[2],
-						"light"		=> $chassis_bonus[3],
-						"low"		=> $chassis_bonus[4],
-						"rear"		=> $chassis_bonus[5],
-						"sloped"	=> $chassis_bonus[6],
-						"tires"		=> $chassis_bonus[7],
-						"treads"	=> $chassis_bonus[8]
-					);
-				}
 			}
 		}
 		else
