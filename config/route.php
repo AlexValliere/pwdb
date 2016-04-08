@@ -16,6 +16,7 @@ function get_routes($route = NULL) {
 		'create_metal_maiden'	=> 'metal_maiden/add',
 		'edit_metal_maiden'		=> 'metal_maiden/edit',
 		'metal_maiden'			=> 'metal_maiden/view',
+		'spreadsheet'			=> 'metal_maiden/spreadsheet'
 	);
 
 	if (isset($route) && !empty($route) && array_key_exists($route, $routes))

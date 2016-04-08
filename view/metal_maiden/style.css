@@ -38,17 +38,25 @@ table.lifestyle_skills td.icon {
 	width: 50px;
 }
 
-.view_tank button {
-	background-color: #1D6088;
-	margin-bottom: 25px;
-	color: #ffffff;
-}
-
-.view_tank pre.wiki {
-	background-color: #06334E;
-	color: #ffffff;
-}
-
 .edit_metal_maiden legend {
+	color: #ffffff;
+}
+
+.tank_spreadsheet tr:nth-of-type(odd)
+{
+	background-color: #272727;
+}
+
+.tank_spreadsheet tr:nth-of-type(even)
+{
+	background-color: #404040;
+}
+
+.tank_spreadsheet th
+{
+	color: #ffffff;
+}
+
+.tank_spreadsheet a {
 	color: #ffffff;
 }

@@ -7,5 +7,7 @@
 
 	if (get_route() == "metal_maiden")
 		echo '<li>View tank profile</li>';
+	else if (get_route() == "spreadsheet")
+		echo '<li>Tank sheet</li>';
 	?>
 </ol>

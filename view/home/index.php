@@ -3,6 +3,9 @@ $tank_list = $metalMaidensManager->getCategory_nation_list("ht", "britannia");
 ?>
 <section id="metal_maidens_index">
 	<h1 class="page-header">Metal Maidens list</h1>
+	<p>Indexed tanks : <?php echo $tank_indexed; ?> out of <?php echo $tank_total; ?></p>
+
+	<?php include_once("layouts/export_to_wiki.php"); ?>
 
 	<?php
 	foreach ($nations as $nation)

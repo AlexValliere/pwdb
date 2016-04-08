@@ -19,3 +19,14 @@ ol.breadcrumb li a {
 ol.breadcrumb li.active {
 	color: #FFFFFF;
 }
+
+button {
+	background-color: #1D6088;
+	margin-bottom: 25px;
+	color: #ffffff;
+}
+
+pre.wiki {
+	background-color: #06334E;
+	color: #ffffff;
+}

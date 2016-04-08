@@ -11,6 +11,7 @@
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
+				<li><a href="index.php?route=spreadsheet">Tank sheet</a></li>
 				<?php if ($current_user == NULL) { ?>
 					<li><a href="index.php?route=login">Connexion</a></li>
 					<li><a href="index.php?route=register">Inscription</a></li>
