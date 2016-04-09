@@ -5,6 +5,8 @@
 		?>
 		<h1 class="page-header"><?php echo $tank->getTank(); ?><small><?php echo $tank->getName(); ?></small></h1>
 
+		<p style="float: right; text-align: right;">Created on : <?php echo $tank->getCreated_on(); ?><br />Last updated : <?php echo $tank->getUpdated_on(); ?></p>
+
 		<a href="index.php?route=edit_metal_maiden&amp;tank=<?php echo $tank->getTank_slug(); ?>"><button type="button">Edit this page</button></a>
 		<?php include("layouts/export_to_wiki.php"); ?>
 

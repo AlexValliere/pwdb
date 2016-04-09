@@ -215,7 +215,8 @@ class MetalMaidensManager
 				quote_main_screen_4 = :quote_main_screen_4,
 				quote_main_screen_5 = :quote_main_screen_5,
 				quote_upgrading = :quote_upgrading,
-				quote_attacking = :quote_attacking
+				quote_attacking = :quote_attacking,
+				updated_on = FROM_UNIXTIME(:updated_on)
 			WHERE id = :id');
 
 		$query->bindValue(':id', $metalMaiden->getId(), PDO::PARAM_INT);
@@ -250,6 +251,7 @@ class MetalMaidensManager
 		$query->bindValue(':quote_main_screen_5', $metalMaiden->getQuote_main_screen_5());
 		$query->bindValue(':quote_upgrading', $metalMaiden->getQuote_upgrading());
 		$query->bindValue(':quote_attacking', $metalMaiden->getQuote_attacking());
+		$query->bindValue(':updated_on', time());
 
 		$query->execute();
 	}

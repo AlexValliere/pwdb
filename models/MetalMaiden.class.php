@@ -32,6 +32,8 @@ class MetalMaiden
 	protected $_quote_main_screen_5;
 	protected $_quote_upgrading;
 	protected $_quote_attacking;
+	protected $_created_on;
+	protected $_updated_on;
 
 	static $verbose = false;
 
@@ -72,6 +74,8 @@ class MetalMaiden
 			echo 'main screen quote 5 : ' . $this->getQuote_main_screen_5() . '<br />';
 			echo 'upgrading quote : ' . $this->getQuote_upgrading() . '<br />';
 			echo 'attacking quote : ' . $this->getQuote_attacking() . '<br />';
+			echo 'created on : ' . $this->getCreated_on() . '<br />';
+			echo 'last updated : ' . $this->getUpdated_on() . '<br />';
 		}
 	}
 
@@ -114,6 +118,8 @@ class MetalMaiden
 	public function getQuote_main_screen_5()	{ return $this->_quote_main_screen_5; }
 	public function getQuote_upgrading()		{ return $this->_quote_upgrading; }
 	public function getQuote_attacking()		{ return $this->_quote_attacking; }
+	public function getUpdated_on()				{ return $this->_updated_on; }
+	public function getCreated_on()				{ return $this->_created_on; }
 
 	public function getArmor_category()		{ if ($this->_category == "spg") return "light"; elseif ($this->_category == "ht" || $this->_category == "atg") return "heavy"; elseif ($this->_category == "lav" || $this->_category == "lt" || $this->_category == "mt") return "standard"; else return ""; }
 	public function getLive2d_string()		{ if ($this->_live2d == "1") return "Available"; elseif ($this->_live2d == "0") return "Not available"; else return ""; }
@@ -481,6 +487,14 @@ class MetalMaiden
 
 	public function setQuote_attacking( $quote ) {
 		$this->_quote_attacking = $quote;
+	}
+
+	public function setCreated_on( $time ) {
+		$this->_created_on = $time;
+	}
+
+	public function setUpdated_on( $time ) {
+		$this->_updated_on = $time;
 	}
 }
 ?>
