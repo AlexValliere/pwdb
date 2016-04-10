@@ -1,0 +1,152 @@
+<?php
+$resources = array(
+	"blueprints"		=>	array(
+		"blueprint_n1",
+		"blueprint_n2",
+		"blueprint_n3",
+		"blueprint_n4",
+		"blueprint_n5",
+		"blueprint_n6",
+		"blueprint_n7",
+		"blueprint_n8",
+		"blueprint_n9"
+	),
+	"bwmg_resources"	=> array(
+		"dext",
+		"irid",
+		"trit"
+	),
+	"main"				=> array(
+		"codon",
+		"diesel",
+		"fate_pin",
+		"g_corn",
+		"g_iron",
+		"g_milk",
+		"gold_stack",
+		"petrol",
+		"silver"
+	),
+	"research"			=> array(
+		"dogtag",
+		"processor",
+		"secret_plan",
+		"test_doll",
+		"wreck"
+	),
+	"equipment"			=> array(
+		"active_detector",
+		"armour_plate",
+		"armrest",
+		"aux_engine",
+		"binoculars",
+		"cabin",
+		"camouflage",
+		"counterrecoil",
+		"cushions",
+		"electric_detector",
+		"electric_switch",
+		"evacuator",
+		"extinguisher",
+		"fuel_filter",
+		"gun_rammer",
+		"gun_stabilizer",
+		"hmg",
+		"lmg",
+		"lubricant",
+		"periscope",
+		"propellant",
+		"reactive_armour",
+		"skirt_armour",
+		"smoke_launcher",
+		"spall_liner",
+		"spare_tracks",
+		"suppressor",
+		"torsion_bar",
+		"trail",
+		"wet_rack"
+	),
+	"equipment_by_slot"	=> array(
+		"mod"		=> array(
+			"active_detector",
+			"armour_plate",
+			"counterrecoil",
+			"gun_rammer",
+			"hmg",
+			"lmg",
+			"propellant",
+			"reactive_armour",
+			"smoke_launcher",
+			"spare_tracks"
+		),
+		"turret"		=> array(
+			"active_detector",
+			"armour_plate",
+			"evacuator",
+			"gun_rammer",
+			"lubricant",
+			"periscope",
+			"propellant",
+			"reactive_armour",
+			"skirt_armour",
+			"suppressor"
+		),
+		"cabin"		=> array(
+			"aux_engine",
+			"cabin",
+			"electric_detector",
+			"electric_switch",
+			"extinguisher",
+			"fuel_filter",
+			"gun_stabilizer",
+			"torsion_bar",
+			"wet_rack"
+		),
+		"external"		=> array(
+			"armrest",
+			"camouflage",
+			"cushions",
+			"lubricant",
+			"periscope",
+			"smoke_launcher",
+			"spall_liner",
+			"spare_tracks",
+			"torsion_bar"
+		),
+		"internal"		=> array(
+			"active_detector",
+			"binoculars",
+			"camouflage",
+			"cushions",
+			"extinguisher",
+			"fuel_filter",
+			"gun_stabilizer",
+			"lubricant",
+			"smoke_launcher",
+			"wet_rack"
+		),
+		"carriage"		=> array(
+			"aux_engine",
+			"camouflage",
+			"electric_detector",
+			"electric_switch",
+			"spare_tracks",
+			"suppressor",
+			"trail",
+			"wet_rack"
+		),
+		"special"		=> array(
+			"armour_plate",
+			"aux_engine",
+			"binoculars",
+			"counterrecoil",
+			"evacuator",
+			"gun_rammer",
+			"gun_stabilizer",
+			"propellant",
+			"skirt_armour",
+			"suppressor"
+		)
+	)
+);
+?>

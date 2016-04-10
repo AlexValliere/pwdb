@@ -8,15 +8,16 @@ function get_route() {
 
 function get_routes($route = NULL) {
 	$routes = array(
-		'home'					=> 'home/index',
-		'confirm_email'			=> 'user/confirm_email',
-		'login'					=> 'user/login',
-		'logout'				=> 'user/logout',
-		'register'				=> 'user/register',
-		'create_metal_maiden'	=> 'metal_maiden/add',
-		'edit_metal_maiden'		=> 'metal_maiden/edit',
-		'metal_maiden'			=> 'metal_maiden/view',
-		'spreadsheet'			=> 'metal_maiden/spreadsheet'
+		'home'								=> 'home/index',
+		'confirm_email'						=> 'user/confirm_email',
+		'login'								=> 'user/login',
+		'logout'							=> 'user/logout',
+		'register'							=> 'user/register',
+		'create_metal_maiden'				=> 'metal_maiden/add',
+		'edit_metal_maiden'					=> 'metal_maiden/edit',
+		'edit_metal_maiden_requirements'	=> 'metal_maiden/edit_req',
+		'metal_maiden'						=> 'metal_maiden/view',
+		'spreadsheet'						=> 'metal_maiden/spreadsheet'
 	);
 
 	if (isset($route) && !empty($route) && array_key_exists($route, $routes))
@@ -27,10 +28,11 @@ function get_routes($route = NULL) {
 
 function get_routes_firewall() {
 	$routes_firewall = array(
-		'home'		=> NULL,
-		'login'		=> NULL,
-		'create_metal_maiden'	=> 'users',
-		'edit_metal_maiden'	=> 'users'
+		'home'								=> NULL,
+		'login'								=> NULL,
+		'create_metal_maiden'				=> 'users',
+		'edit_metal_maiden'					=> 'users',
+		'edit_metal_maiden_requirements'	=> 'users'
 	);
 
 	return $routes_firewall;

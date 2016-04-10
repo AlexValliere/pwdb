@@ -60,3 +60,37 @@ table.lifestyle_skills td.icon {
 .tank_spreadsheet a {
 	color: #ffffff;
 }
+
+.col-lg-12.tank_req {
+	margin-bottom: 15px;
+}
+
+.col-lg-1.tank_req {
+	text-align: center;
+	display: inline-block;
+	color: white;
+}
+
+.col-lg-1.tank_req p.level {
+	border-bottom: 1px solid white;
+}
+
+.tank_req_resources .col-lg-1.tank_req {
+	float: none;
+}
+
+.col-lg-1.tank_req img {
+	text-align: center;
+	display: inline-block;
+}
+
+img.tank_req {
+	height: 150px;
+}
+
+span.label.label-danger.tank_req {
+	margin-bottom: 15px;
+	display: inline-block;
+	font-size: 90%;
+	padding: 0.4em 0.6em;
+}

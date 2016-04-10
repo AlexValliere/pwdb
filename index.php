@@ -16,6 +16,8 @@ require_once(PWDB_LIB_DIR	    . 'current_user.php');
 require_once(PWDB_LIB_DIR		. 'debug.php');
 require_once(PWDB_LIB_DIR		. 'redirection.php');
 
+require_once(PWDB_LIB_DIR		. 'resources_array.php');
+
 try { $dbhandler = new PDOConfig(); $dbhandler->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING ); }
 catch(PDOException $e) { die('Unable to open database connection'); }
 

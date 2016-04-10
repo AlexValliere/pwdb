@@ -80,6 +80,17 @@ class MetalMaidensManager
 
 		$metalMaidensManager = new MetalMaidensManager($this->_dbhandler);
 		$metalMaiden = $metalMaidensManager->get($metalMaidensManager->tank_slug_exists($metalMaiden->getTank_slug()));
+
+		if ($metalMaiden != false)
+		{
+			$query = $this->_dbhandler->prepare('INSERT INTO `metal_maidens_req`
+				SET tank_id = :tank_id,
+					tank_slug = :tank_slug'
+			);
+			$query->bindValue(':id', $metalMaiden->getId(), PDO::PARAM_INT);
+			$query->bindValue(':tank_slug', $metalMaiden->getTank_slug());
+			$query->execute();
+		}
 	}
 
 	public function count() {
@@ -105,7 +116,13 @@ class MetalMaidensManager
 	public function get( $id ) {
 		$id = (int) $id;
 
-		$query = $this->_dbhandler->query('SELECT * FROM `metal_maidens` WHERE id = ' . $id);
+		$query = $this->_dbhandler->query('
+			SELECT *
+			FROM `metal_maidens`
+			INNER JOIN `metal_maidens_req`
+			ON `metal_maidens`.`id` = `metal_maidens_req`.`tank_id`
+			WHERE `metal_maidens`.`id` = ' . $id
+		);
 		$data = $query->fetch(PDO::FETCH_ASSOC);
 
 		if ($data != false)
@@ -184,6 +201,11 @@ class MetalMaidensManager
 	}
 
 	public function update( MetalMaiden $metalMaiden ) {
+		$metalMaidensManager = new MetalMaidensManager($this->_dbhandler);
+		$metalMaiden = $metalMaidensManager->get($metalMaiden->getId());
+
+		$currentTank_slug = $metalMaiden->getTank_slug();
+
 		$query = $this->_dbhandler->prepare('UPDATE `metal_maidens`
 			SET name = :name,
 				tank = :tank,
@@ -253,6 +275,48 @@ class MetalMaidensManager
 		$query->bindValue(':quote_attacking', $metalMaiden->getQuote_attacking());
 		$query->bindValue(':updated_on', time());
 
+		$query->execute();
+
+		$metalMaiden = $metalMaidensManager->get($metalMaidensManager->tank_slug_exists($metalMaiden->getTank_slug()));
+
+		if ($currentTank_slug != $metalMaiden->getTank_slug())
+		{
+			$query = $this->_dbhandler->prepare('UPDATE `metal_maidens_req`
+				SET tank_slug = :tank_slug,
+					tank_id = :tank_id
+				WHERE tank_slug = :tank_slug_old');
+			$query->bindValue(':tank_slug', $metalMaiden->getTank_slug());
+			$query->bindValue(':tank_slug_old', $currentTank_slug);
+			$query->bindValue(':id', $metalMaiden->getId(), PDO::PARAM_INT);
+			$query->execute();
+		}
+	}
+
+	public function updateRequirements( MetalMaiden $metalMaiden, $requirements ) {
+		$metalMaidensManager = new MetalMaidensManager($this->_dbhandler);
+		$metalMaiden = $metalMaidensManager->get($metalMaiden->getId());
+
+		$query = $this->_dbhandler->prepare('UPDATE `metal_maidens_req`
+			SET forge = :forge,
+				naval_port = :naval_port,
+				refactor = :refactor,
+				chapter = :chapter,
+				method_1 = :method_1,
+				method_2 = :method_2,
+				method_3 = :method_3,
+				develop = :develop,
+				research = :research
+			WHERE tank_id = :tank_id');
+		$query->bindValue(':forge', $requirements["forge"]);
+		$query->bindValue(':naval_port', $requirements["naval_port"]);
+		$query->bindValue(':refactor', $requirements["refactor"]);
+		$query->bindValue(':chapter', serialize($requirements["chapter"]));
+		$query->bindValue(':method_1', serialize($requirements["method_1"]));
+		$query->bindValue(':method_2', serialize($requirements["method_2"]));
+		$query->bindValue(':method_3', serialize($requirements["method_3"]));
+		$query->bindValue(':develop', serialize($requirements["develop"]));
+		$query->bindValue(':research', serialize($requirements["research"]));
+		$query->bindValue(':tank_id', $metalMaiden->getId());
 		$query->execute();
 	}
 

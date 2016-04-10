@@ -35,6 +35,16 @@ class MetalMaiden
 	protected $_created_on;
 	protected $_updated_on;
 
+	protected $_forge;
+	protected $_naval_port;
+	protected $_refactor;
+	protected $_chapter;
+	protected $_method_1;
+	protected $_method_2;
+	protected $_method_3;
+	protected $_develop;
+	protected $_research;
+
 	static $verbose = false;
 
 	public function __construct( array $kwargs ) {
@@ -76,6 +86,15 @@ class MetalMaiden
 			echo 'attacking quote : ' . $this->getQuote_attacking() . '<br />';
 			echo 'created on : ' . $this->getCreated_on() . '<br />';
 			echo 'last updated : ' . $this->getUpdated_on() . '<br />';
+			echo '<br />Join requirements<br />';
+			echo 'forge : ' . $this->getForge() . '<br />';
+			echo 'naval port : ' . $this->getNaval_port() . '<br />';
+			echo 'refactor : ' . $this->getRefactor() . '<br />';
+			echo 'method 1 : ' . $this->getMethod_1() . '<br />';
+			echo 'method 2 : ' . $this->getMethod_2() . '<br />';
+			echo 'method 3 : ' . $this->getMethod_3() . '<br />';
+			echo 'develop : ' . $this->getDevelop() . '<br />';
+			echo 'research : ' . $this->getResearch() . '<br />';
 		}
 	}
 
@@ -121,11 +140,66 @@ class MetalMaiden
 	public function getUpdated_on()				{ return $this->_updated_on; }
 	public function getCreated_on()				{ return $this->_created_on; }
 
-	public function getArmor_category()		{ if ($this->_category == "spg") return "light"; elseif ($this->_category == "ht" || $this->_category == "atg") return "heavy"; elseif ($this->_category == "lav" || $this->_category == "lt" || $this->_category == "mt") return "standard"; else return ""; }
-	public function getLive2d_string()		{ if ($this->_live2d == "1") return "Available"; elseif ($this->_live2d == "0") return "Not available"; else return ""; }
-	public function getImagename()			{ return str_replace('/', '_', $this->_tank); }
-	public function getMax_rank()			{ if ($this->_rarity == "gold") return "3"; elseif ($this->_rarity == "purple") return "2"; elseif ($this->_rarity == "blue") return "1"; else return ""; }
-	public function getTank_slug()			{ return post_slug($this->_tank); }
+	public function getForge()					{ return $this->_forge; }
+	public function getNaval_port()				{ return $this->_naval_port; }
+	public function getRefactor()				{ return $this->_refactor; }
+	public function getChapter()				{ return $this->_chapter; }
+	public function getMethod_1()				{ return $this->_method_1; }
+	public function getMethod_2()				{ return $this->_method_2; }
+	public function getMethod_3()				{ return $this->_method_3; }
+	public function getDevelop()				{ return $this->_develop; }
+	public function getResearch()				{ return $this->_research; }
+	public function getRequirements( $requirement ) {
+		switch ($requirement) {
+			case 'forge':
+				return $this->_forge;
+				break;
+
+			case 'naval_port':
+				return $this->_naval_port;
+				break;
+			
+			case 'refactor':
+				return $this->_refactor;
+				break;
+
+			case 'chapter':
+				return $this->_chapter;
+				break;
+
+			case 'method_1':
+				return $this->_method_1;
+				break;
+
+			case 'method_2':
+				return $this->_method_2;
+				break;
+
+			case 'method_3':
+				return $this->_method_3;
+				break;
+
+			case 'develop':
+				return $this->_develop;
+				break;
+
+			case 'research':
+				return $this->_research;
+				break;
+
+			default:
+				return NULL;
+				break;
+		}
+	}
+
+	public function getArmor_category()			{ if ($this->_category == "spg") return "light"; elseif ($this->_category == "ht" || $this->_category == "atg") return "heavy"; elseif ($this->_category == "lav" || $this->_category == "lt" || $this->_category == "mt") return "standard"; else return ""; }
+	public function getLive2d_string()			{ if ($this->_live2d == "1") return "Available"; elseif ($this->_live2d == "0") return "Not available"; else return ""; }
+	public function getImagename()				{ return str_replace('/', '_', $this->_tank); }
+	public function getMax_rank()				{ if ($this->_rarity == "gold") return "3"; elseif ($this->_rarity == "purple") return "2"; elseif ($this->_rarity == "blue") return "1"; else return ""; }
+	public function getTank_slug()				{ return post_slug($this->_tank); }
+
+	public function getChapter_number($chapter, $volume) { return $this->_chapter[$chapter . "_" . $volume]; }
 
 	public function countQuote_main_screen() {
 		$i = 0;
@@ -495,6 +569,132 @@ class MetalMaiden
 
 	public function setUpdated_on( $time ) {
 		$this->_updated_on = $time;
+	}
+
+	public function setForge( $bool ) {
+		$this->_forge = $bool;
+	}
+
+	public function setNaval_port( $level ) {
+		$this->_naval_port = $level;
+	}
+
+	public function setRefactor( $level ) {
+		$this->_refactor = $level;
+	}
+
+	public function setChapter( $chapter ) {
+		if (!empty($chapter))
+		{
+			$data = @unserialize($chapter);
+
+			if ($chapter === 'b:0;' || $data !== false)
+			{
+				$this->_chapter = $data;
+			}
+			else
+			{
+				if (is_array($chapter))
+					$this->_chapter = $chapter;
+			}
+		}
+		else
+			$this->_chapter = NULL;
+	}
+
+	public function setMethod_1( $method ) {
+		if (!empty($method))
+		{
+			$data = @unserialize($method);
+
+			if ($method === 'b:0;' || $data !== false)
+			{
+				$this->_method_1 = $data;
+			}
+			else
+			{
+				if (is_array($method))
+					$this->_method_1 = $method;
+			}
+		}
+		else
+			$this->_method_1 = NULL;
+	}
+
+	public function setMethod_2( $method ) {
+		if (!empty($method))
+		{
+			$data = @unserialize($method);
+
+			if ($method === 'b:0;' || $data !== false)
+			{
+				$this->_method_2 = $data;
+			}
+			else
+			{
+				if (is_array($method))
+					$this->_method_2 = $method;
+			}
+		}
+		else
+			$this->_method_2 = NULL;
+	}
+
+	public function setMethod_3( $method ) {
+		if (!empty($method))
+		{
+			$data = @unserialize($method);
+
+			if ($method === 'b:0;' || $data !== false)
+			{
+				$this->_method_3 = $data;
+			}
+			else
+			{
+				if (is_array($method))
+					$this->_method_3 = $method;
+			}
+		}
+		else
+			$this->_method_3 = NULL;
+	}
+
+	public function setDevelop( $develop ) {
+		if (!empty($develop))
+		{
+			$data = @unserialize($develop);
+
+			if ($develop === 'b:0;' || $data !== false)
+			{
+				$this->_develop = $data;
+			}
+			else
+			{
+				if (is_array($develop))
+					$this->_develop = $develop;
+			}
+		}
+		else
+			$this->_develop = NULL;
+	}
+
+	public function setResearch( $research ) {
+		if (!empty($research))
+		{
+			$data = @unserialize($research);
+
+			if ($research === 'b:0;' || $data !== false)
+			{
+				$this->_research = $data;
+			}
+			else
+			{
+				if (is_array($research))
+					$this->_research = $research;
+			}
+		}
+		else
+			$this->_research = NULL;
 	}
 }
 ?>
