@@ -67,18 +67,6 @@ $resources = array(
 		"wet_rack"
 	),
 	"equipment_by_slot"	=> array(
-		"mod"		=> array(
-			"active_detector",
-			"armour_plate",
-			"counterrecoil",
-			"gun_rammer",
-			"hmg",
-			"lmg",
-			"propellant",
-			"reactive_armour",
-			"smoke_launcher",
-			"spare_tracks"
-		),
 		"turret"		=> array(
 			"active_detector",
 			"armour_plate",
@@ -90,6 +78,18 @@ $resources = array(
 			"reactive_armour",
 			"skirt_armour",
 			"suppressor"
+		),
+		"mod"		=> array(
+			"active_detector",
+			"armour_plate",
+			"counterrecoil",
+			"gun_rammer",
+			"hmg",
+			"lmg",
+			"propellant",
+			"reactive_armour",
+			"smoke_launcher",
+			"spare_tracks"
 		),
 		"cabin"		=> array(
 			"aux_engine",

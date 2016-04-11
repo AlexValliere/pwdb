@@ -88,6 +88,35 @@ img.tank_req {
 	height: 150px;
 }
 
+.tank_req img.slot {
+	height: 1.5em;
+}
+
+.tank_req div.equipment {
+	position: relative;
+	min-height: 70px;
+}
+
+.tank_req div.equipment p {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	direction: rtl;
+	font-size: x-large;
+	color: gold;
+	text-shadow: rgb(0, 0, 0) -2px 1px 0px;
+	font-weight: bold;
+}
+
+.tank_req div.equipment img.slot {
+	position: absolute;
+	height: 30px;
+	bottom: 0;
+	left: 0;
+}
+
 span.label.label-danger.tank_req {
 	margin-bottom: 15px;
 	display: inline-block;

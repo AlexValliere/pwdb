@@ -6,13 +6,13 @@ foreach($form_values_array as $form_value)
 	?>
 	<fieldset>
 		<div class="row">
-			<div class="col-sm-6 col-sm-offset-3">
+			<div class="col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-3">
 				<legend><?php echo ucfirst(str_replace('_', ' ', $form_value)); ?></legend>
 			</div>
 		</div>
 
 		<div class="form-group">
-			<div class="col-sm-6 col-sm-offset-3">
+			<div class="col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-3">
 				<div class="row">
 					<?php
 					for ($i = 1; $i <= 3; $i++)

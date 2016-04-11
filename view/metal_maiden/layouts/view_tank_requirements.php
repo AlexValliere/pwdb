@@ -227,13 +227,21 @@
 						$equipment = implode("_", $equipment);
 						?>
 						<div class="col-lg-1 tank_req">
-							<img
-								src="<?php echo RESSOURCES_DIR . "equipment/" . $equipment . ".png"; ?>"
-								alt="<?php echo ucfirst($equipment); ?> image"
-								class="img-responsive"
-							/>
+							<div class="equipment">
+								<img
+									src="<?php echo RESSOURCES_DIR . "equipment/" . $equipment . ".png"; ?>"
+									alt="<?php echo ucfirst($equipment); ?> image"
+									class="img-responsive"
+								/>
+								<p>S<?php echo $tank->getRequirements($form_value)["equipment_rank"]; ?></p>
+								<img
+									src="<?php echo RESSOURCES_DIR . "equipment/" . $slot . ".png"; ?>"
+									alt="<?php echo ucfirst($slot); ?> image"
+									class="slot"
+								/>
+							</div>
 							<p>
-								[<?php echo ucfirst($slot); ?> S<?php echo $tank->getRequirements($form_value)["equipment_rank"]; ?>] x <?php echo $tank->getRequirements($form_value)["equipment_quantity"]; ?>
+								x <?php echo $tank->getRequirements($form_value)["equipment_quantity"]; ?>
 							</p>
 						</div>
 						<?php
