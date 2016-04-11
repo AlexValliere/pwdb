@@ -65,7 +65,7 @@ table.lifestyle_skills td.icon {
 	margin-bottom: 15px;
 }
 
-.col-lg-1.tank_req {
+.tank_req.tank {
 	text-align: center;
 	display: inline-block;
 	color: white;
@@ -75,13 +75,33 @@ table.lifestyle_skills td.icon {
 	border-bottom: 1px solid white;
 }
 
-.tank_req_resources .col-lg-1.tank_req {
-	float: none;
+.col-lg-1.tank_req {
+	position: relative;
+	min-height: 105px;
+}
+
+.col-lg-1.tank_req p.quantity {
+	position: absolute;
+	bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	margin-bottom: 0;
 }
 
 .col-lg-1.tank_req img {
 	text-align: center;
 	display: inline-block;
+}
+
+img.tank_req_item {
+	position: absolute;
+	margin: auto;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
 }
 
 img.tank_req {
@@ -97,12 +117,13 @@ img.tank_req {
 	min-height: 70px;
 }
 
-.tank_req div.equipment p {
+.tank_req p.item_rank {
 	position: absolute;
-	bottom: 0;
-	right: 0;
+	bottom: 1em;
+	right: 20%;
 	margin: 0;
 	padding: 0;
+	top: 0;
 	direction: rtl;
 	font-size: x-large;
 	color: gold;
@@ -110,11 +131,11 @@ img.tank_req {
 	font-weight: bold;
 }
 
-.tank_req div.equipment img.slot {
+.tank_req img.item_slot {
 	position: absolute;
+	top: 0;
 	height: 30px;
-	bottom: 0;
-	left: 0;
+	left: 20%;
 }
 
 span.label.label-danger.tank_req {

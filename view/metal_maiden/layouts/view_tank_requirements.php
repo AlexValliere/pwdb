@@ -94,7 +94,7 @@
 				if ($value == "1")
 				{
 					?>
-					<div class="col-lg-1">
+					<div class="col-xs-6 col-sm-3 col-lg-1">
 						<p>Volume <?php echo str_replace("_", "-", $key); ?></p>
 					</div>
 					<?php
@@ -144,7 +144,7 @@
 							$tank_req = $metalMaidensManager->get($metalMaidensManager->tank_slug_exists($tank->getRequirements($form_value)["tank_" . $i]));
 							?>
 							<a href="index.php?route=metal_maiden&amp;tank=<?php echo $tank_req->getTank_slug(); ?>">
-								<div class="col-lg-1 tank_req">
+								<div class="col-xs-3 col-sm-2 col-lg-1 tank_req tank">
 									<p class="level">
 										<small>
 											Level <?php if ($tank->getRequirements($form_value)["tank_level_" . $i] != 0) echo $tank->getRequirements($form_value)["tank_level_" . $i]; else echo "?"; ?>
@@ -172,13 +172,13 @@
 					if ($tank->getRequirements($form_value)["dogtag"] != 0)
 					{
 						?>
-						<div class="col-lg-1 tank_req">
+						<div class="col-xs-3 col-sm-2 col-lg-1 tank_req tank">
 							<img
 								src="<?php echo RESSOURCES_DIR . "icons/dogtag.png"; ?>"
 								alt="Dogtag image"
-								class="img-responsive"
+								class="img-responsive tank_req_item"
 							/>
-							<p>
+							<p class="quantity">
 								x <?php echo $tank->getRequirements($form_value)["dogtag"]; ?>
 							</p>
 						</div>
@@ -189,13 +189,13 @@
 					if ($tank->getRequirements($form_value)["resource_quantity"] != 0)
 					{
 						?>
-						<div class="col-lg-1 tank_req">
+						<div class="col-xs-3 col-sm-2 col-lg-1 tank_req tank">
 							<img
 								src="<?php echo RESSOURCES_DIR . "icons/" . $tank->getRequirements($form_value)["resource"] . ".png"; ?>"
-								alt="Dogtag image"
-								class="img-responsive"
+								alt="Resource image"
+								class="img-responsive tank_req_item"
 							/>
-							<p>
+							<p class="quantity">
 								x <?php echo $tank->getRequirements($form_value)["resource_quantity"]; ?>
 							</p>
 						</div>
@@ -206,13 +206,13 @@
 					if ($tank->getRequirements($form_value)["blueprint_quantity"] != 0)
 					{
 						?>
-						<div class="col-lg-1 tank_req">
+						<div class="col-xs-3 col-sm-2 col-lg-1 tank_req tank">
 							<img
 								src="<?php echo RESSOURCES_DIR . "icons/" . $tank->getRequirements($form_value)["blueprint"] . ".png"; ?>"
-								alt="Dogtag image"
-								class="img-responsive"
+								alt="Blueprint image"
+								class="img-responsive tank_req_item"
 							/>
-							<p>
+							<p class="quantity">
 								x <?php echo $tank->getRequirements($form_value)["blueprint_quantity"]; ?>
 							</p>
 						</div>
@@ -226,21 +226,19 @@
 						$slot = array_shift($equipment);
 						$equipment = implode("_", $equipment);
 						?>
-						<div class="col-lg-1 tank_req">
-							<div class="equipment">
-								<img
-									src="<?php echo RESSOURCES_DIR . "equipment/" . $equipment . ".png"; ?>"
-									alt="<?php echo ucfirst($equipment); ?> image"
-									class="img-responsive"
-								/>
-								<p>S<?php echo $tank->getRequirements($form_value)["equipment_rank"]; ?></p>
-								<img
-									src="<?php echo RESSOURCES_DIR . "equipment/" . $slot . ".png"; ?>"
-									alt="<?php echo ucfirst($slot); ?> image"
-									class="slot"
-								/>
-							</div>
-							<p>
+						<div class="col-xs-3 col-sm-2 col-lg-1 tank_req tank">
+							<img
+								src="<?php echo RESSOURCES_DIR . "equipment/" . $equipment . ".png"; ?>"
+								alt="<?php echo ucfirst($equipment); ?> image"
+								class="img-responsive tank_req_item"
+							/>
+							<p class="item_rank">S<?php echo $tank->getRequirements($form_value)["equipment_rank"]; ?></p>
+							<img
+								src="<?php echo RESSOURCES_DIR . "equipment/" . $slot . ".png"; ?>"
+								alt="<?php echo ucfirst($slot); ?> image"
+								class="item_slot"
+							/>
+							<p class="quantity">
 								x <?php echo $tank->getRequirements($form_value)["equipment_quantity"]; ?>
 							</p>
 						</div>
@@ -253,13 +251,13 @@
 				{
 					?>
 					<div class="row">
-						<div class="col-lg-1 tank_req">
+						<div class="col-xs-3 col-sm-2 col-lg-1 tank_req tank">
 							<img
 								src="<?php echo RESSOURCES_DIR . "icons/silver.png"; ?>"
 								alt="Silver image"
-								class="img-responsive"
+								class="img-responsive tank_req_item"
 							/>
-							<p>
+							<p class="quantity">
 								x <?php echo number_format($tank->getRequirements($form_value)["silver"], 0, ',', ' '); ?>
 							</p>
 						</div>

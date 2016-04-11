@@ -30,20 +30,20 @@
 							type="radio"
 							name="chapter_<?php echo $i . '_' . $j; ?>"
 							id="chapter_<?php echo $i . '_' . $j; ?>"
-							value="0"
-							<?php if (!isset($tank) || (isset($tank) && ($tank->getChapter() == NULL || $tank->getChapter_number($i, $j) == 0))) echo 'checked="checked"'; ?>
+							value="1"
+							<?php if (isset($tank) && $tank->getChapter_number($i, $j) == 1) echo 'checked="checked"'; ?>
 						/>
-						No
+						Yes
 					</label>
 					<label class="radio-inline">
 						<input
 							type="radio"
 							name="chapter_<?php echo $i . '_' . $j; ?>"
 							id="chapter_<?php echo $i . '_' . $j; ?>"
-							value="1"
-							<?php if (isset($tank) && $tank->getChapter_number($i, $j) == 1) echo 'checked="checked"'; ?>
+							value="0"
+							<?php if (!isset($tank) || (isset($tank) && ($tank->getChapter() == NULL || $tank->getChapter_number($i, $j) == 0))) echo 'checked="checked"'; ?>
 						/>
-						Yes
+						No
 					</label>
 				</div>
 			</div>
