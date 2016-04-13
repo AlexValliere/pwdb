@@ -70,6 +70,7 @@ $resources = array(
 		"turret"		=> array(
 			"active_detector",
 			"armour_plate",
+			"counterrecoil",
 			"evacuator",
 			"gun_rammer",
 			"hmg",
