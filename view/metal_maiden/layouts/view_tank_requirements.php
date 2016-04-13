@@ -234,7 +234,7 @@
 							/>
 							<p class="item_rank">S<?php echo $tank->getRequirements($form_value)["equipment_rank"]; ?></p>
 							<img
-								src="<?php echo RESSOURCES_DIR . "equipment/" . $slot . ".png"; ?>"
+								src="<?php echo RESSOURCES_DIR . "icons/" . $slot . ".png"; ?>"
 								alt="<?php echo ucfirst($slot); ?> image"
 								class="item_slot"
 							/>

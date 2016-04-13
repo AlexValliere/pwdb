@@ -345,6 +345,13 @@ class MetalMaidensManager
 			$query->bindValue(':tank_id', $metalMaiden->getId());
 		}
 		$query->execute();
+
+		$query = $this->_dbhandler->prepare('UPDATE `metal_maidens`
+			SET	updated_on = FROM_UNIXTIME(:updated_on)
+			WHERE id = :id');
+		$query->bindValue(':id', $metalMaiden->getId(), PDO::PARAM_INT);
+		$query->bindValue(':updated_on', time());
+		$query->execute();
 	}
 
 	public function setDbhandler( PDO $dbhandler ) {

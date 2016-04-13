@@ -3,7 +3,7 @@
 	<?php
 	foreach ($tank->getEquipment_slots() as $slot => $value) {
 		if ($value != "null")
-			echo ' <img style="height: 30px;" src="' . RESSOURCES_DIR . 'equipment/' . $value . '.png" alt="' . $value . ' icon" />';
+			echo ' <img style="height: 30px;" src="' . RESSOURCES_DIR . 'icons/' . $value . '.png" alt="' . $value . ' icon" />';
 	}
 	?>
 	<div class="row equipment">
