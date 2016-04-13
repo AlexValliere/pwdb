@@ -12,12 +12,12 @@
 ?>
 <fieldset>
 	<div class="row">
-		<div class="col-sm-6 col-sm-offset-3">
+		<div class="col-sm-6 col-sm-offset-3 col-lg-6 col-lg-offset-3">
 			<legend>Quotes</legend>
 		</div>
 	</div>
 
-	<div class="col-sm-6 col-sm-offset-3">
+	<div class="col-sm-10 col-sm-offset-2 col-lg-6 col-lg-offset-3">
 		<p>Type null to set a quote to <span style="color: Crimson;">No quote</span></p>
 	</div>
 
@@ -26,8 +26,8 @@
 	{
 		?>
 		<div class="form-group">
-			<label for="<?php echo $quote_index; ?>" class="col-sm-2 col-sm-offset-2 control-label"><?php echo $quote_name; ?> :</label>
-			<div class="col-sm-5">
+			<label for="<?php echo $quote_index; ?>" class="col-sm-2 col-sm-offset-1 col-lg-2 col-lg-offset-2 control-label"><?php echo $quote_name; ?> :</label>
+			<div class="col-sm-6 col-lg-5">
 				<textarea class="form-control" name="<?php echo $quote_index; ?>" id="<?php echo $quote_index; ?>" rows="3"><?php if (isset($tank)) echo $tank->getQuote($quote_index); ?></textarea>
 			</div>
 		</div>

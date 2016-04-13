@@ -296,27 +296,54 @@ class MetalMaidensManager
 		$metalMaidensManager = new MetalMaidensManager($this->_dbhandler);
 		$metalMaiden = $metalMaidensManager->get($metalMaiden->getId());
 
-		$query = $this->_dbhandler->prepare('UPDATE `metal_maidens_req`
-			SET forge = :forge,
-				naval_port = :naval_port,
-				refactor = :refactor,
-				chapter = :chapter,
-				method_1 = :method_1,
-				method_2 = :method_2,
-				method_3 = :method_3,
-				develop = :develop,
-				research = :research
-			WHERE tank_id = :tank_id');
-		$query->bindValue(':forge', $requirements["forge"]);
-		$query->bindValue(':naval_port', $requirements["naval_port"]);
-		$query->bindValue(':refactor', $requirements["refactor"]);
-		$query->bindValue(':chapter', serialize($requirements["chapter"]));
-		$query->bindValue(':method_1', serialize($requirements["method_1"]));
-		$query->bindValue(':method_2', serialize($requirements["method_2"]));
-		$query->bindValue(':method_3', serialize($requirements["method_3"]));
-		$query->bindValue(':develop', serialize($requirements["develop"]));
-		$query->bindValue(':research', serialize($requirements["research"]));
-		$query->bindValue(':tank_id', $metalMaiden->getId());
+		if ($requirements != NULL || empty($requirements))
+		{
+			$query = $this->_dbhandler->prepare('UPDATE `metal_maidens_req`
+				SET forge = :forge,
+					naval_port = :naval_port,
+					refactor = :refactor,
+					chapter = :chapter,
+					method_1 = :method_1,
+					method_2 = :method_2,
+					method_3 = :method_3,
+					develop = :develop,
+					research = :research
+				WHERE tank_id = :tank_id');
+			$query->bindValue(':forge', $requirements["forge"]);
+			$query->bindValue(':naval_port', $requirements["naval_port"]);
+			$query->bindValue(':refactor', $requirements["refactor"]);
+			$query->bindValue(':chapter', serialize($requirements["chapter"]));
+			$query->bindValue(':method_1', serialize($requirements["method_1"]));
+			$query->bindValue(':method_2', serialize($requirements["method_2"]));
+			$query->bindValue(':method_3', serialize($requirements["method_3"]));
+			$query->bindValue(':develop', serialize($requirements["develop"]));
+			$query->bindValue(':research', serialize($requirements["research"]));
+			$query->bindValue(':tank_id', $metalMaiden->getId());
+		}
+		else
+		{
+			$query = $this->_dbhandler->prepare('UPDATE `metal_maidens_req`
+				SET forge = :forge,
+					naval_port = :naval_port,
+					refactor = :refactor,
+					chapter = :chapter,
+					method_1 = :method_1,
+					method_2 = :method_2,
+					method_3 = :method_3,
+					develop = :develop,
+					research = :research
+				WHERE tank_id = :tank_id');
+			$query->bindValue(':forge', 0);
+			$query->bindValue(':naval_port', 0);
+			$query->bindValue(':refactor', 0);
+			$query->bindValue(':chapter', serialize(NULL));
+			$query->bindValue(':method_1', serialize(NULL));
+			$query->bindValue(':method_2', serialize(NULL));
+			$query->bindValue(':method_3', serialize(NULL));
+			$query->bindValue(':develop', serialize(NULL));
+			$query->bindValue(':research', serialize(NULL));
+			$query->bindValue(':tank_id', $metalMaiden->getId());
+		}
 		$query->execute();
 	}
 

@@ -113,6 +113,20 @@ if ($method == 'POST')
 	$metalMaidensManager = new MetalMaidensManager($dbhandler);
 	$metalMaidensManager->add($metalMaiden);
 
+	$requirements = array(
+		"forge"			=> 0,
+		"naval_port"	=> $naval_port,
+		"refactor"		=> $refactor,
+		"chapter"		=> $chapter,
+		"method_1"		=> $other_requirments["method_1"],
+		"method_2"		=> $other_requirments["method_2"],
+		"method_3"		=> $other_requirments["method_3"],
+		"develop"		=> $other_requirments["develop"],
+		"research"		=> $other_requirments["research"]
+	);
+
+	$metalMaidensManager->updateRequirements($metalMaiden, $requirements);
+
 	redirection('index.php?route=metal_maiden&tank=' . $metalMaiden->getTank_slug(), 250);
 
 	if (VERBOSE)

@@ -10,7 +10,7 @@
 	{
 		?>
 		<div class="form-group">
-			<label for="lifestyle_skill_<?php echo $i; ?>" class="col-sm-2 col-sm-offset-2 control-label">Lifestyle skill <?php echo $i; ?> :</label>
+			<label for="lifestyle_skill_<?php echo $i; ?>" class="col-sm-2 col-sm-offset-1 col-lg-2 col-lg-offset-2 control-label">Lifestyle skill <?php echo $i; ?> :</label>
 			<div class="col-sm-2">
 				<select name="lifestyle_skill_<?php echo $i; ?>" id="lifestyle_skill_<?php echo $i; ?>" multiple class="form-control">
 					<option value="null"
@@ -37,8 +37,8 @@
 				</select>
 			</div>
 
-			<label for="lifestyle_skill_<?php echo $i; ?>_level" class="col-sm-1 control-label">Level :</label>
-			<div class="col-sm-1">
+			<label for="lifestyle_skill_<?php echo $i; ?>_level" class="col-sm-2 col-lg-1 control-label">Level :</label>
+			<div class="col-sm-2 col-lg-1">
 				<input type="number" name="lifestyle_skill_<?php echo $i; ?>_level" id="lifestyle_skill_<?php echo $i; ?>_level" min="0" max="3" step="1" class="form-control"
 				value="<?php if (isset($tank)) echo $tank->getLifestyle_skills()["skill_" . $i . "_level"]; else echo "0"; ?>"
 				/>

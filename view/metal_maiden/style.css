@@ -119,8 +119,7 @@ img.tank_req {
 
 .tank_req p.item_rank {
 	position: absolute;
-	bottom: 1em;
-	right: 20%;
+	left: 10%;
 	margin: 0;
 	padding: 0;
 	top: 0;
@@ -133,9 +132,9 @@ img.tank_req {
 
 .tank_req img.item_slot {
 	position: absolute;
-	top: 0;
+	top: 2em;
 	height: 30px;
-	left: 20%;
+	left: 10%;
 }
 
 span.label.label-danger.tank_req {

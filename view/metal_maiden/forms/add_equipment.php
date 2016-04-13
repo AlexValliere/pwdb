@@ -6,7 +6,7 @@
 	</div>
 
 	<div class="form-group">
-		<div class="col-sm-6 col-sm-offset-3">
+		<div class="col-sm-10 col-sm-offset-2 col-lg-6 col-lg-offset-3">
 			<p>Ammunitions :</p>
 			<div class="row">
 				<?php
@@ -35,18 +35,20 @@
 		</div>
 	</div>
 
-	<div class="col-sm-6 col-sm-offset-3">
-		<p>Equipment slots :</p>
+	<div class="form-group">
+		<div class="col-sm-10 col-sm-offset-2 col-lg-6 col-lg-offset-3">
+			<p>Equipment slots :</p>
+		</div>
 	</div>
 
 	<div class="form-group">
-		<div class="col-sm-8 col-sm-offset-2">
+		<div class="col-sm-12 col-sm-offset-0 col-lg-8 col-lg-offset-2">
 			<?php
 			for ($i = 1; $i <= 8; $i++)
 			{
 				?>
-				<label for="equipment_slot_<?php echo $i; ?>" class="col-sm-1 control-label">Slot <?php echo $i; ?> :</label>
-				<div class="col-sm-2">
+				<label for="equipment_slot_<?php echo $i; ?>" class="col-sm-2 col-lg-1 control-label">Slot <?php echo $i; ?> :</label>
+				<div class="col-sm-2 col-lg-2">
 					<select name="equipment_slot_<?php echo $i; ?>" id="equipment_slot_<?php echo $i; ?>" class="form-control">
 						<option value="null"
 						<?php if (!isset($tank) || (isset($tank) && $tank->getEquipment_slots()["slot_" . $i] == "null")) echo 'selected="selected"'; ?>
@@ -81,7 +83,7 @@
 	</div>
 
 	<div class="form-group">
-		<div class="col-sm-6 col-sm-offset-3">
+		<div class="col-sm-10 col-sm-offset-2 col-lg-6 col-lg-offset-3">
 			<p>Engine bonus :</p>
 			<div class="row">
 				<?php
@@ -111,7 +113,7 @@
 	</div>
 
 	<div class="form-group">
-		<div class="col-sm-6 col-sm-offset-3">
+		<div class="col-sm-10 col-sm-offset-2 col-lg-6 col-lg-offset-3">
 			<p>Chassis bonus :</p>
 			<div class="row">
 				<?php

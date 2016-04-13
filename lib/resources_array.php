@@ -72,6 +72,8 @@ $resources = array(
 			"armour_plate",
 			"evacuator",
 			"gun_rammer",
+			"hmg",
+			"lmg",
 			"lubricant",
 			"periscope",
 			"propellant",
