@@ -92,6 +92,7 @@ $resources = array(
 			"lmg",
 			"propellant",
 			"reactive_armour",
+			"skirt_armour",
 			"smoke_launcher",
 			"spare_tracks"
 		),
