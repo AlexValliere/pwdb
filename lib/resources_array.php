@@ -69,43 +69,27 @@ $resources = array(
 	"equipment_by_slot"	=> array(
 		"turret"		=> array(
 			"active_detector",
-			"armour_plate",
+			"armor_plate",
 			"counterrecoil",
-			"evacuator",
-			"gun_rammer",
-			"hmg",
-			"lmg",
-			"lubricant",
-			"periscope",
-			"propellant",
-			"reactive_armour",
-			"skirt_armour",
-			"suppressor"
-		),
-		"mod"		=> array(
-			"active_detector",
-			"armour_plate",
-			"counterrecoil",
-			"evacuator",
 			"gun_rammer",
 			"hmg",
 			"lmg",
 			"propellant",
-			"reactive_armour",
-			"skirt_armour",
+			"reactive_armor",
 			"smoke_launcher",
 			"spare_tracks"
 		),
-		"cabin"		=> array(
-			"aux_engine",
-			"cabin",
-			"electric_detector",
-			"electric_switch",
-			"extinguisher",
-			"fuel_filter",
-			"gun_stabilizer",
-			"torsion_bar",
-			"wet_rack"
+		"mod"		=> array(
+			"active_detector",
+			"armor_plate",
+			"evacuator",
+			"gun_rammer",
+			"lubricant",
+			"periscope",
+			"propellant",
+			"reactive_armor",
+			"skirt_armor",
+			"suppressor"
 		),
 		"external"		=> array(
 			"armrest",
@@ -117,6 +101,17 @@ $resources = array(
 			"spall_liner",
 			"spare_tracks",
 			"torsion_bar"
+		),
+		"cabin"		=> array(
+			"aux_engine",
+			"cabin",
+			"electric_detector",
+			"electric_switch",
+			"extinguisher",
+			"fuel_filter",
+			"gun_stabilizer",
+			"torsion_bar",
+			"wet_rack"
 		),
 		"internal"		=> array(
 			"active_detector",
@@ -141,7 +136,7 @@ $resources = array(
 			"wet_rack"
 		),
 		"special"		=> array(
-			"armour_plate",
+			"armor_plate",
 			"aux_engine",
 			"binoculars",
 			"counterrecoil",
@@ -149,7 +144,7 @@ $resources = array(
 			"gun_rammer",
 			"gun_stabilizer",
 			"propellant",
-			"skirt_armour",
+			"skirt_armor",
 			"suppressor"
 		)
 	)
