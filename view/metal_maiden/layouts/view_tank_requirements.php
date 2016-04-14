@@ -145,16 +145,23 @@
 							?>
 							<a href="index.php?route=metal_maiden&amp;tank=<?php echo $tank_req->getTank_slug(); ?>">
 								<div class="col-xs-3 col-sm-2 col-lg-1 tank_req tank">
-									<p class="level">
+									<p class="level <?php echo $tank_req->getRarity(); ?>">
 										<small>
 											Level <?php if ($tank->getRequirements($form_value)["tank_level_" . $i] != 0) echo $tank->getRequirements($form_value)["tank_level_" . $i]; else echo "?"; ?>
 										</small>
 									</p>
-									<img
-										src="<?php echo TANK_IMAGE_DIR . "/portrait/" . $tank_req->getImagename(); ?>.png"
-										alt="<?php echo $tank_req->getTank(); ?> portrait"
-										class="img-responsive"
-									/>
+									<div class="tank_portrait">
+										<img
+											src="<?php echo TANK_IMAGE_DIR . "/portrait/" . $tank_req->getImagename(); ?>.png"
+											alt="<?php echo $tank_req->getTank(); ?> portrait"
+											class="img-responsive"
+										/>
+										<img
+											src="<?php echo RESSOURCES_DIR . "icons/tech_" . $tank_req->getMax_rank() . ".png"; ?>"
+											alt=""
+											class="tech"
+										/>
+									</div>
 									<p>
 										<small><?php echo $tank_req->getTank(); ?></small>
 										<br />

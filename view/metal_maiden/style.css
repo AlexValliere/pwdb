@@ -75,6 +75,10 @@ table.lifestyle_skills td.icon {
 	border-bottom: 1px solid white;
 }
 
+.col-lg-1.tank_req p.level.blue		{ border-color: #2058FF; }
+.col-lg-1.tank_req p.level.purple	{ border-color: #C500C5; }
+.col-lg-1.tank_req p.level.gold		{ border-color: gold; }
+
 .col-lg-1.tank_req {
 	position: relative;
 	min-height: 105px;
@@ -93,6 +97,17 @@ table.lifestyle_skills td.icon {
 .col-lg-1.tank_req img {
 	text-align: center;
 	display: inline-block;
+}
+
+div.tank_req.tank div.tank_portrait {
+	position: relative;
+}
+
+div.tank_req.tank div.tank_portrait img.tech {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 20px;
 }
 
 img.tank_req_item {
