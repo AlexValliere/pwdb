@@ -696,5 +696,52 @@ class MetalMaiden
 		else
 			$this->_research = NULL;
 	}
+
+	public function setRequirements( $requirements ) {
+		if (isset($requirements["forge"]))
+			$this->setForge($requirements["forge"]);
+		else
+			$this->_forge = 0;
+
+		if (isset($requirements["naval_port"]))
+			$this->setNaval_port($requirements["naval_port"]);
+		else
+			$this->_naval_port = 0;
+
+		if (isset($requirements["refactor"]))
+			$this->setRefactor($requirements["refactor"]);
+		else
+			$this->_refactor = 0;
+
+		if (isset($requirements["chapter"]))
+			$this->setChapter($requirements["chapter"]);
+		else
+			$this->_chapter = NULL;
+
+		if (isset($requirements["method_1"]))
+			$this->setMethod_1($requirements["method_1"]);
+		else
+			$this->_method_1 = NULL;
+
+		if (isset($requirements["method_2"]))
+			$this->setMethod_2($requirements["method_2"]);
+		else
+			$this->_method_2 = NULL;
+
+		if (isset($requirements["method_3"]))
+			$this->setMethod_3($requirements["method_3"]);
+		else
+			$this->_method_3 = NULL;
+
+		if (isset($requirements["develop"]))
+			$this->setDevelop($requirements["develop"]);
+		else
+			$this->_develop = NULL;
+
+		if (isset($requirements["research"]))
+			$this->setResearch($requirements["research"]);
+		else
+			$this->_research = NULL;
+	}
 }
 ?>

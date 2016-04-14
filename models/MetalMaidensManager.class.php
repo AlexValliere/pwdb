@@ -134,7 +134,12 @@ class MetalMaidensManager
 	public function getList() {
 		$metalMaidens = array();
 
-		$query = $this->_dbhandler->query('SELECT * FROM `metal_maidens` ORDER BY tank');
+		$query = $this->_dbhandler->query('
+			SELECT *
+			FROM `metal_maidens`
+			INNER JOIN `metal_maidens_req`
+			ON `metal_maidens`.`id` = `metal_maidens_req`.`tank_id`
+			ORDER BY tank');
 
 		while ($data = $query->fetch(PDO::FETCH_ASSOC))
 		{
@@ -169,7 +174,12 @@ class MetalMaidensManager
 
 		if (in_array($category, $allowed_values))
 		{
-			$query = $this->_dbhandler->query('SELECT * FROM `metal_maidens` WHERE category = "' . $category . '" ORDER BY tank');
+			$query = $this->_dbhandler->query('
+				SELECT *
+				FROM `metal_maidens`
+				INNER JOIN `metal_maidens_req`
+				ON `metal_maidens`.`id` = `metal_maidens_req`.`tank_id`
+				WHERE category = "' . $category . '" ORDER BY tank');
 
 			while ($data = $query->fetch(PDO::FETCH_ASSOC))
 			{
@@ -189,7 +199,12 @@ class MetalMaidensManager
 
 		if (in_array($category, $allowed_category_values) && in_array($nation, $allowed_nation_values))
 		{
-			$query = $this->_dbhandler->query('SELECT * FROM `metal_maidens` WHERE category = "' . $category . '" AND nation = "' . $nation . '" ORDER BY tank');
+			$query = $this->_dbhandler->query('
+				SELECT *
+				FROM `metal_maidens`
+				INNER JOIN `metal_maidens_req`
+				ON `metal_maidens`.`id` = `metal_maidens_req`.`tank_id`
+				WHERE category = "' . $category . '" AND nation = "' . $nation . '" ORDER BY tank');
 
 			while ($data = $query->fetch(PDO::FETCH_ASSOC))
 			{
