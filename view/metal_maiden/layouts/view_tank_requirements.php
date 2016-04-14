@@ -145,7 +145,7 @@
 							?>
 							<a href="index.php?route=metal_maiden&amp;tank=<?php echo $tank_req->getTank_slug(); ?>">
 								<div class="col-xs-3 col-sm-2 col-lg-1 tank_req tank">
-									<p class="level <?php echo $tank_req->getRarity(); ?>">
+									<p class="level <?php echo $tank_req->getRarity(); ?>_border">
 										<small>
 											Level <?php if ($tank->getRequirements($form_value)["tank_level_" . $i] != 0) echo $tank->getRequirements($form_value)["tank_level_" . $i]; else echo "?"; ?>
 										</small>

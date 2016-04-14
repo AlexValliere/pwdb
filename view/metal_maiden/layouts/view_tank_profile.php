@@ -16,7 +16,7 @@
 			style="width: 35px;"
 		/>
 	</p>
-	<p><strong>Rarity :</strong> <?php echo ucfirst($tank->getRarity()); ?></p>
+	<p><strong>Rarity :</strong> <span class="<?php echo $tank->getRarity(); ?>_text"><?php echo ucfirst($tank->getRarity()); ?></span></p>
 	<p>
 		<strong>Nation :</strong>
 		<img

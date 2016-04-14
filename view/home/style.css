@@ -6,12 +6,10 @@
 #metal_maidens_index .nation img	{ width: 75px; }
 
 #metal_maidens_index img.portrait	{
-	border: 1px ridge #223F58;
+	border-width: 1px;
+	border-style: ridge;
 	height: 100px;
 }
-#metal_maidens_index img.portrait.blue		{ border: 1px ridge #2058FF; }
-#metal_maidens_index img.portrait.purple	{ border: 1px ridge #C500C5; }
-#metal_maidens_index img.portrait.gold		{ border: 1px ridge gold; }
 
 #metal_maidens_index .metal_maiden_block {
 	text-align: center;

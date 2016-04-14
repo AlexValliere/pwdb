@@ -30,3 +30,10 @@ pre.wiki {
 	background-color: #06334E;
 	color: #ffffff;
 }
+
+.blue_border	{ border-color: #03A9F4; }
+.blue_text		{ color: #03A9F4; }
+.purple_border	{ border-color: #E64FE6; }
+.purple_text	{ color: #E64FE6; }
+.gold_border	{ border-color: gold; }
+.gold_text		{ color: gold; }

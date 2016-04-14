@@ -72,12 +72,9 @@ table.lifestyle_skills td.icon {
 }
 
 .col-lg-1.tank_req p.level {
-	border-bottom: 1px solid white;
+	border-width: 0 0 1px 0;
+	border-style: solid;
 }
-
-.col-lg-1.tank_req p.level.blue		{ border-color: #2058FF; }
-.col-lg-1.tank_req p.level.purple	{ border-color: #C500C5; }
-.col-lg-1.tank_req p.level.gold		{ border-color: gold; }
 
 .col-lg-1.tank_req {
 	position: relative;

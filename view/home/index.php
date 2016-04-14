@@ -51,7 +51,7 @@ $tank_list = $metalMaidensManager->getCategory_nation_list("ht", "britannia");
 								<img
 									src="<?php echo TANK_IMAGE_DIR . "portrait/" . $tank->getImagename(); ?>.png"
 									alt="<?php echo $tank->getTank(); ?> portrait"
-									class="portrait <?php echo $tank->getRarity(); ?>"
+									class="portrait <?php echo $tank->getRarity(); ?>_border"
 								/>
 								<br />
 								<p class="<?php echo $nation . " " . $category . " " . $tank->getRarity(); ?>">
