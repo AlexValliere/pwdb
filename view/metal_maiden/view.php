@@ -3,7 +3,7 @@
 	if (isset($tank))
 	{
 		?>
-		<h1 class="page-header"><?php echo $tank->getTank(); ?><small><?php echo $tank->getName(); ?></small></h1>
+		<h1 class="page-header"><?php echo $tank->getTank(); ?> <small><?php echo $tank->getName(); ?></small></h1>
 
 		<p style="float: right; text-align: right;">Created on : <?php echo $tank->getCreated_on(); ?><br />Last updated : <?php echo $tank->getUpdated_on(); ?></p>
 
