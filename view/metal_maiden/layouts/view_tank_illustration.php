@@ -10,5 +10,11 @@
 	{
 		echo '<img src="'.$filename.'" alt="'.$tank->getTank().' full illustration" class="img-responsive" />';
 	}
+	else if (file_exists(urldecode($filename)))
+	{
+		echo '<img src="'.urldecode ($filename).'" alt="'.$tank->getTank().' full illustration" class="img-responsive" />';
+	}
+	else
+		echo "Can't access : " . $filename;
 	?>
 </div>
