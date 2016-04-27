@@ -83,4 +83,101 @@
 		</div>
 	</div>
 
+	<div class="form-group">
+		<label for="fire_resist" class="col-sm-2 col-sm-offset-0 col-lg-1 col-lg-offset-3 control-label">Fire resist :</label>
+		<div class="col-sm-2 col-lg-1">
+			<select name="fire_resist" id="fire_resist" class="form-control">
+				<option value="S"
+				<?php if (isset($tank) && $tank->getFire_resist() == "S") echo 'selected="selected"'; ?>
+				>S</option>
+				<option value="A"
+				<?php if (isset($tank) && $tank->getFire_resist() == "A") echo 'selected="selected"'; ?>
+				>A</option>
+				<option value="B"
+				<?php if (isset($tank) && $tank->getFire_resist() == "B") echo 'selected="selected"'; ?>
+				>B</option>
+				<option value="C"
+				<?php if (isset($tank) && $tank->getFire_resist() == "C") echo 'selected="selected"'; ?>
+				>C</option>
+				<option value="D"
+				<?php if (isset($tank) && $tank->getFire_resist() == "D") echo 'selected="selected"'; ?>
+				>D</option>
+			</select>
+		</div>
+
+		<label for="crit_resist" class="col-sm-2 col-lg-1 control-label">Crit resist :</label>
+		<div class="col-sm-2 col-lg-1">
+			<select name="crit_resist" id="crit_resist" class="form-control">
+				<option value="S"
+				<?php if (isset($tank) && $tank->getCrit_resist() == "S") echo 'selected="selected"'; ?>
+				>S</option>
+				<option value="A"
+				<?php if (isset($tank) && $tank->getCrit_resist() == "A") echo 'selected="selected"'; ?>
+				>A</option>
+				<option value="B"
+				<?php if (isset($tank) && $tank->getCrit_resist() == "B") echo 'selected="selected"'; ?>
+				>B</option>
+				<option value="C"
+				<?php if (isset($tank) && $tank->getCrit_resist() == "C") echo 'selected="selected"'; ?>
+				>C</option>
+				<option value="D"
+				<?php if (isset($tank) && $tank->getCrit_resist() == "D") echo 'selected="selected"'; ?>
+				>D</option>
+			</select>
+		</div>
+
+		<label for="crit_defense" class="col-sm-2 col-lg-1 control-label">Crit defense :</label>
+		<div class="col-sm-2 col-lg-1">
+			<select name="crit_defense" id="crit_defense" class="form-control">
+				<option value="S"
+				<?php if (isset($tank) && $tank->getCrit_defense() == "S") echo 'selected="selected"'; ?>
+				>S</option>
+				<option value="A"
+				<?php if (isset($tank) && $tank->getCrit_defense() == "A") echo 'selected="selected"'; ?>
+				>A</option>
+				<option value="B"
+				<?php if (isset($tank) && $tank->getCrit_defense() == "B") echo 'selected="selected"'; ?>
+				>B</option>
+				<option value="C"
+				<?php if (isset($tank) && $tank->getCrit_defense() == "C") echo 'selected="selected"'; ?>
+				>C</option>
+				<option value="D"
+				<?php if (isset($tank) && $tank->getCrit_defense() == "D") echo 'selected="selected"'; ?>
+				>D</option>
+			</select>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label for="firepower_lvl60" class="col-sm-2 col-sm-offset-0 col-lg-1 col-lg-offset-3 control-label">Firepower LVL60 :</label>
+		<div class="col-sm-2 col-lg-1">
+			<input type="number" name="firepower_lvl60" id="firepower_lvl60" min="0" max="99999" step="1" class="form-control"
+			value="<?php if (isset($tank)) echo $tank->getFirepower_lvl60(); else echo "0"; ?>"
+			/>
+		</div>
+
+		<label for="penetration_lvl60" class="col-sm-2 col-lg-1 control-label">Penetration LVL60 :</label>
+		<div class="col-sm-2 col-lg-1">
+			<input type="number" name="penetration_lvl60" id="penetration_lvl60" min="0" max="99999" step="1" class="form-control"
+			value="<?php if (isset($tank)) echo $tank->getPenetration_lvl60(); else echo "0"; ?>"
+			/>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label for="durability_lvl60" class="col-sm-2 col-sm-offset-0 col-lg-1 col-lg-offset-3 control-label">Durability LVL60 :</label>
+		<div class="col-sm-2 col-lg-1">
+			<input type="number" name="durability_lvl60" id="durability_lvl60" min="0" max="99999" step="1" class="form-control"
+			value="<?php if (isset($tank)) echo $tank->getDurability_lvl60(); else echo "0"; ?>"
+			/>
+		</div>
+
+		<label for="armor_lvl60" class="col-sm-2 col-lg-1 control-label">Armor LVL60 :</label>
+		<div class="col-sm-2 col-lg-1">
+			<input type="number" name="armor_lvl60" id="armor_lvl60" min="0" max="99999" step="1" class="form-control"
+			value="<?php if (isset($tank)) echo $tank->getArmor_lvl60(); else echo "0"; ?>"
+			/>
+		</div>
+	</div>
+
 </fieldset>

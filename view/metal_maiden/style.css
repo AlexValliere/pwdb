@@ -1,10 +1,16 @@
 table.statistic {
-	height: 55px;
+	height: 58px;
 }
 
 table.statistic td:first-child {
 	width: 65px;
 	text-align: right;
+	vertical-align: middle;
+}
+
+table.statistic td.hidden_stat {
+	width: 65px;
+	text-align: center;
 	vertical-align: middle;
 }
 
@@ -154,4 +160,8 @@ span.label.label-danger.tank_req {
 	display: inline-block;
 	font-size: 90%;
 	padding: 0.4em 0.6em;
+}
+
+.stat_lvl60 {
+	color: Crimson;
 }

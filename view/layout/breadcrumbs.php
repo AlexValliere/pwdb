@@ -9,5 +9,7 @@
 		echo '<li>View tank profile</li>';
 	else if (get_route() == "spreadsheet")
 		echo '<li>Tank sheet</li>';
+	else if (get_route() == "changelog")
+		echo '<li>Changelog</li>';
 	?>
 </ol>

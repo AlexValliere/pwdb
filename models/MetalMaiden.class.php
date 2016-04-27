@@ -22,6 +22,13 @@ class MetalMaiden
 	protected $_detection;
 	protected $_targeting;
 	protected $_evasion;
+	protected $_fire_resist;
+	protected $_crit_resist;
+	protected $_crit_defense;
+	protected $_firepower_lvl60;
+	protected $_penetration_lvl60;
+	protected $_durability_lvl60;
+	protected $_armor_lvl60;
 	protected $_min_range;
 	protected $_max_range;
 	protected $_quote_intro;
@@ -76,6 +83,13 @@ class MetalMaiden
 			echo 'evasion : ' . $this->getEvasion() . '<br />';
 			echo 'min range : ' . $this->getMin_range() . '<br />';
 			echo 'max range : ' . $this->getMax_range() . '<br />';
+			echo 'fire resist : ' . $this->getFire_resist() . '<br />';
+			echo 'crit resist : ' . $this->getCrit_resist() . '<br />';
+			echo 'crit defense : ' . $this->getCrit_defense() . '<br />';
+			echo 'firepower lvl60 : ' . $this->getFirepower_lvl60() . '<br />';
+			echo 'penetration lvl60 : ' . $this->getPenetration_lvl60() . '<br />';
+			echo 'durability lvl60 : ' . $this->getDurability_lvl60() . '<br />';
+			echo 'armor lvl60 : ' . $this->getArmor_lvl60() . '<br />';
 			echo 'intro quote : ' . $this->getQuote_intro() . '<br />';
 			echo 'main screen quote 1 : ' . $this->getQuote_main_screen_1() . '<br />';
 			echo 'main screen quote 2 : ' . $this->getQuote_main_screen_2() . '<br />';
@@ -127,6 +141,13 @@ class MetalMaiden
 	public function getDetection()				{ return $this->_detection; }
 	public function getTargeting()				{ return $this->_targeting; }
 	public function getEvasion()				{ return $this->_evasion; }
+	public function getFire_resist()			{ return $this->_fire_resist; }
+	public function getCrit_resist()			{ return $this->_crit_resist; }
+	public function getCrit_defense()			{ return $this->_crit_defense; }
+	public function getFirepower_lvl60()		{ return $this->_firepower_lvl60; }
+	public function getPenetration_lvl60()		{ return $this->_penetration_lvl60; }
+	public function getDurability_lvl60()		{ return $this->_durability_lvl60; }
+	public function getArmor_lvl60()			{ return $this->_armor_lvl60; }
 	public function getMin_range()				{ return $this->_min_range; }
 	public function getMax_range()				{ return $this->_max_range; }
 	public function getQuote_intro()			{ return $this->_quote_intro; }
@@ -308,6 +329,34 @@ class MetalMaiden
 
 			case 'max_range':
 				return $this->_max_range;
+				break;
+
+			case 'fire_resist':
+				return $this->_fire_resist;
+				break;
+
+			case 'crit_resist':
+				return $this->_crit_resist;
+				break;
+
+			case 'crit_defense':
+				return $this->_crit_defense;
+				break;
+
+			case 'penetration_lvl60':
+				return $this->_penetration_lvl60;
+				break;
+
+			case 'firepower_lvl60':
+				return $this->_firepower_lvl60;
+				break;
+			
+			case 'durability_lvl60':
+				return $this->_durability_lvl60;
+				break;
+
+			case 'armor_lvl60':
+				return $this->_armor_lvl60;
 				break;
 
 			default:
@@ -521,6 +570,34 @@ class MetalMaiden
 
 	public function setEvasion( $evasion ) {
 		$this->_evasion = $evasion;
+	}
+
+	public function setFire_resist( $fire_resist ) {
+		$this->_fire_resist = $fire_resist;
+	}
+
+	public function setCrit_resist( $crit_resist ) {
+		$this->_crit_resist = $crit_resist;
+	}
+
+	public function setCrit_defense( $crit_defense ) {
+		$this->_crit_defense = $crit_defense;
+	}
+
+	public function setFirepower_lvl60( $firepower_lvl60 ) {
+		$this->_firepower_lvl60 = $firepower_lvl60;
+	}
+
+	public function setPenetration_lvl60( $penetration_lvl60 ) {
+		$this->_penetration_lvl60 = $penetration_lvl60;
+	}
+
+	public function setDurability_lvl60( $durability_lvl60 ) {
+		$this->_durability_lvl60 = $durability_lvl60;
+	}
+
+	public function setArmor_lvl60( $armor_lvl60 ) {
+		$this->_armor_lvl60 = $armor_lvl60;
 	}
 
 	public function setMin_range( $min_range ) {

@@ -32,6 +32,13 @@ class MetalMaidensManager
 				detection = :detection,
 				targeting = :targeting,
 				evasion = :evasion,
+				fire_resist = :fire_resist,
+				crit_resist = :crit_resist,
+				crit_defense = :crit_defense,
+				firepower_lvl60 = :firepower_lvl60,
+				penetration_lvl60 = :penetration_lvl60,
+				durability_lvl60 = :durability_lvl60,
+				armor_lvl60 = :armor_lvl60,
 				min_range = :min_range,
 				max_range = :max_range,
 				quote_intro = :quote_intro,
@@ -65,6 +72,13 @@ class MetalMaidensManager
 		$query->bindValue(':detection', $metalMaiden->getDetection(), PDO::PARAM_INT);
 		$query->bindValue(':targeting', $metalMaiden->getTargeting(), PDO::PARAM_INT);
 		$query->bindValue(':evasion', $metalMaiden->getEvasion(), PDO::PARAM_INT);
+		$query->bindValue(':fire_resist', $metalMaiden->getFire_resist());
+		$query->bindValue(':crit_resist', $metalMaiden->getCrit_resist());
+		$query->bindValue(':crit_defense', $metalMaiden->getCrit_defense());
+		$query->bindValue(':firepower_lvl60', $metalMaiden->getFirepower_lvl60(), PDO::PARAM_INT);
+		$query->bindValue(':penetration_lvl60', $metalMaiden->getPenetration_lvl60(), PDO::PARAM_INT);
+		$query->bindValue(':durability_lvl60', $metalMaiden->getDurability_lvl60(), PDO::PARAM_INT);
+		$query->bindValue(':armor_lvl60', $metalMaiden->getArmor_lvl60(), PDO::PARAM_INT);
 		$query->bindValue(':min_range', $metalMaiden->getMin_range(), PDO::PARAM_INT);
 		$query->bindValue(':max_range', $metalMaiden->getMax_range(), PDO::PARAM_INT);
 		$query->bindValue(':quote_intro', $metalMaiden->getQuote_intro());
@@ -217,7 +231,6 @@ class MetalMaidensManager
 
 	public function update( MetalMaiden $metalMaiden ) {
 		$metalMaidensManager = new MetalMaidensManager($this->_dbhandler);
-		$metalMaiden = $metalMaidensManager->get($metalMaiden->getId());
 
 		$currentTank_slug = $metalMaiden->getTank_slug();
 
@@ -243,6 +256,13 @@ class MetalMaidensManager
 				detection = :detection,
 				targeting = :targeting,
 				evasion = :evasion,
+				fire_resist = :fire_resist,
+				crit_resist = :crit_resist,
+				crit_defense = :crit_defense,
+				firepower_lvl60 = :firepower_lvl60,
+				penetration_lvl60 = :penetration_lvl60,
+				durability_lvl60 = :durability_lvl60,
+				armor_lvl60 = :armor_lvl60,
 				min_range = :min_range,
 				max_range = :max_range,
 				quote_intro = :quote_intro,
@@ -278,6 +298,13 @@ class MetalMaidensManager
 		$query->bindValue(':detection', $metalMaiden->getDetection(), PDO::PARAM_INT);
 		$query->bindValue(':targeting', $metalMaiden->getTargeting(), PDO::PARAM_INT);
 		$query->bindValue(':evasion', $metalMaiden->getEvasion(), PDO::PARAM_INT);
+		$query->bindValue(':fire_resist', $metalMaiden->getFire_resist());
+		$query->bindValue(':crit_resist', $metalMaiden->getCrit_resist());
+		$query->bindValue(':crit_defense', $metalMaiden->getCrit_defense());
+		$query->bindValue(':firepower_lvl60', $metalMaiden->getFirepower_lvl60(), PDO::PARAM_INT);
+		$query->bindValue(':penetration_lvl60', $metalMaiden->getPenetration_lvl60(), PDO::PARAM_INT);
+		$query->bindValue(':durability_lvl60', $metalMaiden->getDurability_lvl60(), PDO::PARAM_INT);
+		$query->bindValue(':armor_lvl60', $metalMaiden->getArmor_lvl60(), PDO::PARAM_INT);
 		$query->bindValue(':min_range', $metalMaiden->getMin_range(), PDO::PARAM_INT);
 		$query->bindValue(':max_range', $metalMaiden->getMax_range(), PDO::PARAM_INT);
 		$query->bindValue(':quote_intro', $metalMaiden->getQuote_intro());
@@ -290,7 +317,7 @@ class MetalMaidensManager
 		$query->bindValue(':quote_attacking', $metalMaiden->getQuote_attacking());
 		$query->bindValue(':updated_on', time());
 
-		$query->execute();
+		$query->execute() or die(print_r($query->errorInfo(), true));
 
 		$metalMaiden = $metalMaidensManager->get($metalMaidensManager->tank_slug_exists($metalMaiden->getTank_slug()));
 

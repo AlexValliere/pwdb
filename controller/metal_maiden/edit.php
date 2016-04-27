@@ -72,6 +72,13 @@ if ($method == 'POST' && isset($_POST["edit_tank"]))
 		$detection = $_POST["detection"];
 		$targeting = $_POST["targeting"];
 		$evasion = $_POST["evasion"];
+		$fire_resist = $_POST["fire_resist"];
+		$crit_resist = $_POST["crit_resist"];
+		$crit_defense = $_POST["crit_defense"];
+		$firepower_lvl60 = $_POST["firepower_lvl60"];
+		$penetration_lvl60 = $_POST["penetration_lvl60"];
+		$durability_lvl60 = $_POST["durability_lvl60"];
+		$armor_lvl60 = $_POST["armor_lvl60"];
 		$min_range = $_POST["min_range"];
 		$max_range = $_POST["max_range"];
 		$quote_intro = is_string($_POST["quote_intro"]) ? trim($_POST["quote_intro"]) : "";
@@ -103,6 +110,13 @@ if ($method == 'POST' && isset($_POST["edit_tank"]))
 		$metalMaiden->setEvasion($evasion);
 		$metalMaiden->setStealth($stealth);
 		$metalMaiden->setDetection($detection);
+		$metalMaiden->setFire_resist($fire_resist);
+		$metalMaiden->setCrit_resist($crit_resist);
+		$metalMaiden->setCrit_defense($crit_defense);
+		$metalMaiden->setFirepower_lvl60($firepower_lvl60);
+		$metalMaiden->setPenetration_lvl60($penetration_lvl60);
+		$metalMaiden->setDurability_lvl60($durability_lvl60);
+		$metalMaiden->setArmor_lvl60($armor_lvl60);
 		$metalMaiden->setMin_range($min_range);
 		$metalMaiden->setMax_range($max_range);
 		$metalMaiden->setQuote_intro($quote_intro);

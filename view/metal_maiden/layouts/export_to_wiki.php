@@ -1,4 +1,5 @@
 <button type="button" onClick="setVisibility();">Export to wiki</button>
+<button type="button" onClick="setVisibility2();">Export requirements only to wiki</button>
 <pre id="export_to_wiki" style="display: none;" class="wiki">
 {{Infobox_Metal_Maiden_Profile
  | model                                        = <?php echo $tank->getTank() . "<br />"; ?>
@@ -80,7 +81,6 @@ if ($tank->countQuotes() > 0)
 }
 ?>
 
-
 ==Attributes==
 {{Infobox_Metal_Maiden_Statistics
  | firepower                                = <?php echo $tank->getFirepower() . "<br />"; ?>
@@ -160,6 +160,123 @@ if (file_exists(utf8_decode($filename)))
 }
 ?>
 </pre>
+
+<pre id="export_requirements_to_wiki" style="display: none;" class="wiki">
+<?php
+echo "==Requirements==<br />";
+echo "&lt;tabber&gt;<br />";
+if ($tank->getChapter() != NULL && array_search('1', $tank->getChapter()))
+{
+	echo "Drop =&lt;div title&gt;Can be obtained in the following volumes :&lt;br /&gt;<br />";
+	$volumes = "";
+	foreach ($tank->getChapter() as $key => $value)
+	{
+		if ($value == "1")
+			$volumes .= str_replace("_", "-", "Volume " . $key . " | ");
+	}
+	for ($i = 1; $i <= 24; $i++)
+	{
+		$volumes_serie = "Volume ".$i."-1 | Volume ".$i."-2 | Volume ".$i."-3 | Volume ".$i."-4";
+		$volumes = str_replace($volumes_serie, "Volume " . $i, $volumes);
+	}
+	$volumes = trim($volumes);
+	if ($volumes[strlen($volumes) - 1] == "|")
+		$volumes = trim(substr($volumes, 0, strlen($volumes) - 1));
+	echo $volumes;
+	echo "&lt;/div&gt;<br />|-|<br />";
+}
+
+if ($tank->getRefactor() > 0)
+{
+	echo "Refactor =&lt;div title&gt;[[File:Base_BWMG_depot.png]]<br />";
+	echo "Appears in BWMG Depot " . $tank->getRefactor() . "&lt;/div&gt;<br />";
+	echo "|-|<br />";
+}
+
+if ($tank->getNaval_port() > 0)
+{
+	echo "Naval Port =&lt;div title&gt;[[File:Base_naval_port.png]]<br />";
+	echo "Requires Naval Port LV" . $tank->getNaval_port() . "&lt;/div&gt;<br />";
+	echo "|-|<br />";
+}
+
+if ($tank->getForge() == 1)
+{
+	echo "Source Forge =&lt;div title&gt;[[File:Source_forge.png|x188px]]<br />";
+	echo "Can be obtained at Source Forge&lt;/div&gt;<br />";
+	echo "|-|<br />";
+}
+
+$form_values_array = ["method_1", "method_2", "method_3", "develop", "research"];
+foreach($form_values_array as $form_value)
+{
+	if ($tank->getRequirements($form_value) != NULL)
+	{
+		$metalMaidensManager = new MetalMaidensManager($dbhandler);
+		echo ucfirst(str_replace("_", " ", $form_value)) . " =&lt;div title&gt;{{Infobox_Metal_Maiden_Requirements_RD<br />";
+
+		if ($tank->getRequirements($form_value)["commander_level"] != 0)
+			echo " | commander_level = " . $tank->getRequirements($form_value)["commander_level"] . "<br />";
+
+		for ($i = 1; $i <= 3; $i++)
+		{
+			if ($tank->getRequirements($form_value)["tank_" . $i] != NULL)
+			{
+				$tank_req = $metalMaidensManager->get($metalMaidensManager->tank_slug_exists($tank->getRequirements($form_value)["tank_" . $i]));
+				echo " | metal_maiden_" . $i . " = " . $tank_req->getTank() . "<br />";
+				echo " | metal_maiden_" . $i . "_rarity = " . ucfirst($tank_req->getRarity()) . "<br />";
+				echo " | metal_maiden_" . $i . "_level = ";
+				if ($tank->getRequirements($form_value)["tank_level_" . $i] != 0)
+					echo $tank->getRequirements($form_value)["tank_level_" . $i];
+				echo "<br />";
+				echo " | metal_maiden_" . $i . "_rank = <br />";
+			}
+		}
+
+		if ($tank->getRequirements($form_value)["blueprint_quantity"] != 0)
+		{
+			echo " | blueprint_rank = " . $tank->getRequirements($form_value)["blueprint"][strlen($tank->getRequirements($form_value)["blueprint"]) - 1] . "<br />";
+			echo " | blueprint_quantity = " . $tank->getRequirements($form_value)["blueprint_quantity"] . "<br />";
+		}
+		
+		if ($tank->getRequirements($form_value)["resource_quantity"] != 0)
+		{
+			$resource = $tank->getRequirements($form_value)["resource"];
+			$resource = explode("_", $resource);
+			for ($i = 0; $i < count($resource); $i++)
+				$resource[$i] = ucfirst($resource[$i]);
+			$resource = implode("_", $resource);
+			echo " | resource = " . str_replace("_", " ", $resource) . "<br />";
+			echo " | resource_quantity = " . $tank->getRequirements($form_value)["resource_quantity"] . "<br />";
+		}
+		
+ 		if ($tank->getRequirements($form_value)["equipment_quantity"] != 0)
+ 		{
+ 			$equipment = explode("_", $tank->getRequirements($form_value)["equipment"]);
+ 			$slot = array_shift($equipment);
+ 			$equipment = implode("_", $equipment);
+
+			$equipment = explode("_", $equipment);
+			for ($i = 0; $i < count($equipment); $i++)
+				$equipment[$i] = ucfirst($equipment[$i]);
+			$equipment = implode("_", $equipment);
+ 			echo " | equipment = " . str_replace("Lmg", "LMG", str_replace("Hmg", "HMG", str_replace("_", " ", $equipment))) . "<br />";
+			echo " | equipment_rank = S" . $tank->getRequirements($form_value)["equipment_rank"] . "<br />";
+			echo " | equipment_slot = " . $slot . "<br />";
+			echo " | equipment_quantity = " . $tank->getRequirements($form_value)["equipment_quantity"] . "<br />";
+ 		}
+ 		
+ 		if ($tank->getRequirements($form_value)["dogtag"] != 0)
+ 			echo " | dogtag_quantity = " . $tank->getRequirements($form_value)["dogtag"] . "<br />";
+ 		
+ 		echo " | silver_quantity = " . number_format($tank->getRequirements($form_value)["silver"], 0, ',', ' ') . "<br />";
+		echo "}}&lt;/div&gt;<br />";
+		echo "|-|<br />";
+	}
+}
+echo "&lt;/tabber&gt;";
+?>
+</pre>
 <script>
     var hidden = true;
     function setVisibility() {
@@ -168,6 +285,16 @@ if (file_exists(utf8_decode($filename)))
             document.getElementById('export_to_wiki').style.display = 'none';
         } else {
             document.getElementById('export_to_wiki').style.display = 'block';
+        }
+    }
+
+    var hidden2 = true;
+    function setVisibility2() {
+        hidden2 = !hidden2;
+        if (hidden2) {
+            document.getElementById('export_requirements_to_wiki').style.display = 'none';
+        } else {
+            document.getElementById('export_requirements_to_wiki').style.display = 'block';
         }
     }
 </script>

@@ -14,7 +14,7 @@
 	{
 		echo '<img src="'.urldecode ($filename).'" alt="'.$tank->getTank().' full illustration" class="img-responsive" />';
 	}
-	else
-		echo "Can't access : " . $filename;
+/*	else
+		echo "Can't access : " . $filename;*/
 	?>
 </div>

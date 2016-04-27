@@ -9,6 +9,7 @@ function get_route() {
 function get_routes($route = NULL) {
 	$routes = array(
 		'home'								=> 'home/index',
+		'changelog'							=> 'home/changelog',
 		'confirm_email'						=> 'user/confirm_email',
 		'login'								=> 'user/login',
 		'logout'							=> 'user/logout',
@@ -17,7 +18,9 @@ function get_routes($route = NULL) {
 		'edit_metal_maiden'					=> 'metal_maiden/edit',
 		'edit_metal_maiden_requirements'	=> 'metal_maiden/edit_req',
 		'metal_maiden'						=> 'metal_maiden/view',
-		'spreadsheet'						=> 'metal_maiden/spreadsheet'
+		'spreadsheet'						=> 'metal_maiden/spreadsheet',
+		'stats'								=> 'metal_maiden/statistics',
+		'tanks_csv'							=> 'metal_maiden/csv'
 	);
 
 	if (isset($route) && !empty($route) && array_key_exists($route, $routes))
