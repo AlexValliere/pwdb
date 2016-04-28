@@ -72,7 +72,7 @@ foreach ($additional_files_array as $key => $value) {
 		style="display: inline-block;"
 	/>
 	<?php
-	echo $tank->getRoot_head_id() . " : " . $value . "<br />";
+	echo $key . " : " . $value . "<br />";
 
 	//1 if (!copy($filepath, $newfilepath)) { echo "failed to copy"; }
 	//2 $zip->addFile($newfilepath);
