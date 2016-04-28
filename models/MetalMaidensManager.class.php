@@ -14,6 +14,7 @@ class MetalMaidensManager
 			SET name = :name,
 				tank = :tank,
 				tank_slug = :tank_slug,
+				root_head_id = :root_head_id,
 				category = :category,
 				nation = :nation,
 				rarity = :rarity,
@@ -54,6 +55,7 @@ class MetalMaidensManager
 		$query->bindValue(':name', $metalMaiden->getName());
 		$query->bindValue(':tank', $metalMaiden->getTank());
 		$query->bindValue(':tank_slug', $metalMaiden->getTank_slug());
+		$query->bindValue(':root_head_id', $metalMaiden->getRoot_head_id(), PDO::PARAM_INT);
 		$query->bindValue(':category', $metalMaiden->getCategory());
 		$query->bindValue(':nation', $metalMaiden->getNation());
 		$query->bindValue(':rarity', $metalMaiden->getRarity());
@@ -238,6 +240,7 @@ class MetalMaidensManager
 			SET name = :name,
 				tank = :tank,
 				tank_slug = :tank_slug,
+				root_head_id = :root_head_id,
 				category = :category,
 				nation = :nation,
 				rarity = :rarity,
@@ -280,6 +283,7 @@ class MetalMaidensManager
 		$query->bindValue(':name', $metalMaiden->getName());
 		$query->bindValue(':tank', $metalMaiden->getTank());
 		$query->bindValue(':tank_slug', $metalMaiden->getTank_slug());
+		$query->bindValue(':root_head_id', $metalMaiden->getRoot_head_id(), PDO::PARAM_INT);
 		$query->bindValue(':category', $metalMaiden->getCategory());
 		$query->bindValue(':nation', $metalMaiden->getNation());
 		$query->bindValue(':rarity', $metalMaiden->getRarity());

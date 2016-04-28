@@ -13,6 +13,7 @@ if ($method == 'POST' && isset($_POST["edit_tank"]))
 	{
 		$name = $_POST["name"];
 		$tank = $_POST["tank"];
+		$root_head_id = $_POST["root_head_id"];
 		$category = $_POST["category"];
 		$nation = $_POST["nation"];
 		$rarity = $_POST["rarity"];
@@ -92,6 +93,7 @@ if ($method == 'POST' && isset($_POST["edit_tank"]))
 
 		$metalMaiden->setName($name);
 		$metalMaiden->setTank($tank);
+		$metalMaiden->setRoot_head_id($root_head_id);
 		$metalMaiden->setCategory($category);
 		$metalMaiden->setNation($nation);
 		$metalMaiden->setRarity($rarity);

@@ -4,6 +4,7 @@ class MetalMaiden
 	protected $_id;
 	protected $_name;
 	protected $_tank;
+	protected $_root_head_id;
 	protected $_category;
 	protected $_nation;
 	protected $_rarity;
@@ -62,6 +63,7 @@ class MetalMaiden
 			echo 'id : ' . $this->getId() . '<br />';
 			echo 'name : ' . $this->getName() . '<br />';
 			echo 'tank : ' . $this->getTank() . '<br />';
+			echo 'root head id : ' . $this->getRoot_head_id() . '<br />';
 			echo 'tank slug : ' . $this->getTank_slug() . '<br />';
 			echo 'category : ' . $this->getCategory() . '<br />';
 			echo 'nation : ' . $this->getNation() . '<br />';
@@ -123,6 +125,7 @@ class MetalMaiden
 	public function getId()						{ return $this->_id; }
 	public function getName()					{ return $this->_name; }
 	public function getTank()					{ return $this->_tank; }
+	public function getRoot_head_id()			{ return $this->_root_head_id; }
 	public function getCategory()				{ return $this->_category; }
 	public function getNation()					{ return $this->_nation; }
 	public function getRarity()					{ return $this->_rarity; }
@@ -423,6 +426,10 @@ class MetalMaiden
 
 	public function setTank( $tank ) {
 		$this->_tank = $tank;
+	}
+
+	public function setRoot_head_id( $root_head_id ) {
+		$this->_root_head_id = $root_head_id;
 	}
 
 	public function setCategory( $category ) {

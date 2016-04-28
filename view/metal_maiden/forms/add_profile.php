@@ -23,6 +23,15 @@
 	</div>
 
 	<div class="form-group">
+		<label for="root_head_id" class="col-sm-2 col-sm-offset-3 control-label">Root head id :</label>
+		<div class="col-sm-3 col-lg-2">
+			<input type="number" name="root_head_id" id="root_head_id" min="0" max="9999" step="1" class="form-control"
+			value="<?php if (isset($tank)) echo $tank->getRoot_head_id(); else echo "0"; ?>"
+			/>
+		</div>
+	</div>
+
+	<div class="form-group">
 		<label for="category" class="col-sm-2 col-sm-offset-3 control-label">Category :</label>
 		<div class="col-sm-3 col-lg-2">
 			<select name="category" id="category" multiple class="form-control">
