@@ -31,9 +31,9 @@ pre.wiki {
 	color: #ffffff;
 }
 
-.blue_border	{ border-color: #03A9F4; }
-.blue_text		{ color: #03A9F4; }
-.purple_border	{ border-color: #E64FE6; }
-.purple_text	{ color: #E64FE6; }
-.gold_border	{ border-color: gold; }
-.gold_text		{ color: gold; }
+.blue_border						{ border-color: #03A9F4; }
+.blue_text, .blue_text:hover		{ color: #03A9F4; }
+.purple_border						{ border-color: #9C27B0; }
+.purple_text, .purple_text:hover	{ color: #9C27B0; }
+.gold_border						{ border-color: gold; }
+.gold_text, .gold_text:hover		{ color: gold; }

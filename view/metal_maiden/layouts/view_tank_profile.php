@@ -30,10 +30,7 @@
 	<p><strong>Live2D :</strong> <?php echo $tank->getLive2d_string(); ?></p>
 	<p>
 		<strong>Max rank :</strong>
-		<?php
-		for($i = 0; $i < $tank->getMax_rank(); $i++)
-			echo '<img src="resources/icons/star-icon.png" alt="Star icon" style="height: 35px;" /> ';
-		?>
+		<img src="resources/icons/tech_<?php echo $tank->getMax_rank(); ?>.png" alt="Rank icon" style="height: 35px;" />
 	</p>
 	<p>
 		<strong>Armor category :</strong>

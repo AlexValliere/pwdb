@@ -1,1 +1,1 @@
-<p>An update has been deployed on April 27, 2016 21:00 GMT+1. <a href="index.php?route=changelog">Click here to view the changelog.</a></p><br />
+<p>An update has been deployed on April 28, 2016 23:45 GMT+1. <a href="index.php?route=changelog">Click here to view the changelog.</a></p><br />

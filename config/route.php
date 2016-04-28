@@ -20,7 +20,7 @@ function get_routes($route = NULL) {
 		'flair'								=> 'metal_maiden/flair',
 		'metal_maiden'						=> 'metal_maiden/view',
 		'spreadsheet'						=> 'metal_maiden/spreadsheet',
-		'stats'								=> 'metal_maiden/statistics',
+		'statistics'						=> 'metal_maiden/statistics',
 		'tanks_csv'							=> 'metal_maiden/csv'
 	);
 

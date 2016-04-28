@@ -1,3 +1,11 @@
+<h3>April 28, 2016 23:45 GMT+1</h3>
+<p>
+- Added <a href="index.php?route=statistics">statistics page</a> on metal maiden attributes.<br />
+- Added titles to pages.
+</p>
+
+<hr />
+
 <h3>April 27, 2016 21:00 GMT+1</h3>
 <p>
 - Cached files for faster page loadings<br />
