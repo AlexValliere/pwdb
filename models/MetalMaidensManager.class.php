@@ -114,8 +114,10 @@ class MetalMaidensManager
 	}
 
 	public function exists($id) {
-		if (is_numeric($id))
-			return (bool) $this->_dbhandler->query('SELECT COUNT(*) FROM `metal_maidens` WHERE id = ' . $id)->fetchColumn();
+		$query = $this->_dbhandler->prepare('SELECT COUNT(*) FROM `metal_maidens` WHERE id = :id');
+		$query->bindValue(':id', $id, PDO::PARAM_INT);
+
+		return (bool) $query->fetchColumn();
 	}
 
 	public function tank_slug_exists( $tank_slug ) {
@@ -126,19 +128,41 @@ class MetalMaidensManager
 	}
 
 	public function delete( MetalMaiden $metalMaiden ) {
-		$this->_dbhandler->exec("DELETE FROM `metal_maidens` WHERE id = " . $metalMaiden->getId());
+		$query = $this->_dbhandler->prepare('DELETE FROM `metal_maidens` WHERE id = :id');
+		$query->bindValue(':id', $metalMaiden->getId(), PDO::PARAM_INT);
+		$query->execute();
 	}
 
 	public function get( $id ) {
-		$id = (int) $id;
-
-		$query = $this->_dbhandler->query('
+		$query = $this->_dbhandler->prepare('
 			SELECT *
 			FROM `metal_maidens`
 			INNER JOIN `metal_maidens_req`
 			ON `metal_maidens`.`id` = `metal_maidens_req`.`tank_id`
-			WHERE `metal_maidens`.`id` = ' . $id
+			WHERE `metal_maidens`.`id` = :id'
 		);
+		$query->bindValue(':id', $id, PDO::PARAM_INT);
+		$query->execute();
+
+		$data = $query->fetch(PDO::FETCH_ASSOC);
+
+		if ($data != false)
+			return new MetalMaiden($data);
+		else
+			return NULL;
+	}
+
+	public function get_by_tank_slug( $tank_slug ) {
+		$query = $this->_dbhandler->prepare('
+			SELECT *
+			FROM `metal_maidens`
+			INNER JOIN `metal_maidens_req`
+			ON `metal_maidens`.`id` = `metal_maidens_req`.`tank_id`
+			WHERE `metal_maidens`.`tank_slug` = :tank_slug'
+		);
+		$query->bindValue(':tank_slug', $tank_slug);
+		$query->execute();
+
 		$data = $query->fetch(PDO::FETCH_ASSOC);
 
 		if ($data != false)
@@ -172,7 +196,14 @@ class MetalMaidensManager
 
 		if (in_array($nation, $allowed_values))
 		{
-			$query = $this->_dbhandler->query('SELECT * FROM `metal_maidens` WHERE nation = "' . $nation . '" ORDER BY tank');
+			$query = $this->_dbhandler->prepare('
+				SELECT *
+				FROM `metal_maidens`
+				INNER JOIN `metal_maidens_req`
+				ON `metal_maidens`.`id` = `metal_maidens_req`.`tank_id`
+				WHERE nation = :nation ORDER BY tank');
+			$query->bindValue(':nation', $nation);
+			$query->execute();
 
 			while ($data = $query->fetch(PDO::FETCH_ASSOC))
 			{
@@ -190,12 +221,14 @@ class MetalMaidensManager
 
 		if (in_array($category, $allowed_values))
 		{
-			$query = $this->_dbhandler->query('
+			$query = $this->_dbhandler->prepare('
 				SELECT *
 				FROM `metal_maidens`
 				INNER JOIN `metal_maidens_req`
 				ON `metal_maidens`.`id` = `metal_maidens_req`.`tank_id`
-				WHERE category = "' . $category . '" ORDER BY tank');
+				WHERE category = :category ORDER BY tank');
+			$query->bindValue(':category', $category);
+			$query->execute();
 
 			while ($data = $query->fetch(PDO::FETCH_ASSOC))
 			{
@@ -215,12 +248,15 @@ class MetalMaidensManager
 
 		if (in_array($category, $allowed_category_values) && in_array($nation, $allowed_nation_values))
 		{
-			$query = $this->_dbhandler->query('
+			$query = $this->_dbhandler->prepare('
 				SELECT *
 				FROM `metal_maidens`
 				INNER JOIN `metal_maidens_req`
 				ON `metal_maidens`.`id` = `metal_maidens_req`.`tank_id`
-				WHERE category = "' . $category . '" AND nation = "' . $nation . '" ORDER BY tank');
+				WHERE category = :category AND nation = :nation ORDER BY tank');
+			$query->bindValue(':category', $category);
+			$query->bindValue(':nation', $nation);
+			$query->execute();
 
 			while ($data = $query->fetch(PDO::FETCH_ASSOC))
 			{
