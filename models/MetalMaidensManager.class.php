@@ -171,6 +171,27 @@ class MetalMaidensManager
 			return NULL;
 	}
 
+	public function search_like_tank_slug( $tank_slug ) {
+		$metalMaidens = array();
+
+		$query = $this->_dbhandler->prepare('
+			SELECT *
+			FROM `metal_maidens`
+			INNER JOIN `metal_maidens_req`
+			ON `metal_maidens`.`id` = `metal_maidens_req`.`tank_id`
+			WHERE `metal_maidens`.`tank_slug` LIKE :tank_slug'
+		);
+		$query->bindValue(':tank_slug', $tank_slug . '%');
+		$query->execute();
+
+		while ($data = $query->fetch(PDO::FETCH_ASSOC))
+		{
+			$metalMaidens[] = new MetalMaiden($data);
+		}
+
+		return $metalMaidens;
+	}
+
 	public function getList() {
 		$metalMaidens = array();
 
@@ -192,7 +213,7 @@ class MetalMaidensManager
 	public function getNation_list( $nation ) {
 		$metalMaidens = array();
 		$nation = strtolower($nation);
-		$allowed_values = array('bavaria', 'brittania', 'freedonia', 'gallia', 'rossiya');
+		$allowed_values = array('bavaria', 'britannia', 'freedonia', 'gallia', 'rossiya');
 
 		if (in_array($nation, $allowed_values))
 		{
