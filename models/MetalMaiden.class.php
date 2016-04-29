@@ -114,6 +114,10 @@ class MetalMaiden
 		}
 	}
 
+	public function __toString() {
+		return $this->_tank;
+	}
+
 	public function hydrate( array $kwargs ) {
 		foreach ($kwargs as $key => $value)
 		{

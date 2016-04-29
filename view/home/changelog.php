@@ -1,6 +1,7 @@
-<h3>April 29, 2016</h3>
+<h3>April 29, 2016 16:55 GMT+1</h3>
 <p>
-- Renamed project to Metal Maiden Depot
+- Renamed project to Metal Maiden Depot.<br />
+- Added searchbar. Available terms for search are : tank names (example: sturmtiger), nation, categories (ATG, HT, LAV ...)
 </p>
 
 <hr />

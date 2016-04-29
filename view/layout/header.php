@@ -20,9 +20,10 @@
 					<li><a href="index.php?route=logout">Déconnexion</a></li>
 				<?php } ?>
 			</ul>
-			<!--<form class="navbar-form navbar-right">
-				<input type="text" class="form-control" placeholder="Search...">
-			</form>-->
+			<form class="navbar-form navbar-right" action="index.php" method="get">
+				<input type="hidden" id="route" name="route" value="search" />
+				<input type="text" class="form-control" placeholder="Search..." id="query" name="query" />
+			</form>
 		</div>
 	</div>
 </nav>

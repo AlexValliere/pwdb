@@ -19,6 +19,7 @@ function get_routes($route = NULL) {
 		'edit_metal_maiden_requirements'	=> 'metal_maiden/edit_req',
 		'flair'								=> 'metal_maiden/flair',
 		'metal_maiden'						=> 'metal_maiden/view',
+		'search'							=> 'metal_maiden/search',
 		'spreadsheet'						=> 'metal_maiden/spreadsheet',
 		'statistics'						=> 'metal_maiden/statistics',
 		'tanks_csv'							=> 'metal_maiden/csv'
