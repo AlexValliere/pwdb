@@ -24,6 +24,7 @@
 		<![endif]-->
 	</head>
 	<body>
+		<?php include_once("analyticstracking.php") ?>
 		<?php include("view/layout/header.php"); ?>
 		<div class="container-fluid">
 			<div class="row">
