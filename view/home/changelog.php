@@ -1,3 +1,11 @@
+<h3>May 1, 2016 01:00 GMT+1</h3>
+<p>
+- The project have been moved from <a href="http://pwdb.16mb.com">pwdb.16mb.com</a> to <a href="http://www.metalmaidendepot.ovh">www.metalmaidendepot.ovh</a><br />
+The new location may take up to 48 hours to be available.
+</p>
+
+<hr />
+
 <h3>April 29, 2016 16:55 GMT+1</h3>
 <p>
 - Renamed project to Metal Maiden Depot.<br />
