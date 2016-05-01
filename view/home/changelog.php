@@ -1,3 +1,11 @@
+<h3>May 1, 2016 20:15 GMT+1</h3>
+<p>
+- Updated how rank are calculated on <a href="index.php?route=statistics">statistics page</a> (Tanks with same attribute value with have the same rank now). (May require a hard reload (ctrl + F5) the first time to display properly the new Metal Maiden information pages)<br />
+- Added attribute rank and delta median values to metal maidens pages.
+</p>
+
+<hr />
+
 <h3>May 1, 2016 01:00 GMT+1</h3>
 <p>
 - The project have been moved from <a href="http://pwdb.16mb.com">pwdb.16mb.com</a> to <a href="http://www.metalmaidendepot.ovh">www.metalmaidendepot.ovh</a><br />
