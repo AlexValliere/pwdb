@@ -165,3 +165,11 @@ span.label.label-danger.tank_req {
 .stat_lvl60 {
 	color: Crimson;
 }
+
+.stat_rank {
+	color: #03A9F4;
+}
+
+.stat_delta_median {
+	color: #4CAF50;
+}

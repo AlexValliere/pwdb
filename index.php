@@ -14,6 +14,7 @@ require_once(PWDB_CONFIG_DIR	. 'classLoader.php');
 require_once(PWDB_CONFIG_DIR	. 'route.php');
 require_once(PWDB_LIB_DIR	    . 'current_user.php');
 require_once(PWDB_LIB_DIR		. 'debug.php');
+require_once(PWDB_LIB_DIR		. 'metal_maiden/cmp.php');
 require_once(PWDB_LIB_DIR		. 'redirection.php');
 
 require_once(PWDB_LIB_DIR		. 'resources_array.php');

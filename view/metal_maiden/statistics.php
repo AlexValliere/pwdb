@@ -59,8 +59,14 @@
 		</tr>
 		<?php
 		$i = 1;
+		$last_attribute_value = $tank_list_sorted_by[$attribute][0]->getStatistics($attribute);
 		foreach($tank_list_sorted_by[$attribute] as $tank)
 		{
+			if ($last_attribute_value != $tank->getStatistics($attribute))
+			{
+				++$i;
+			}
+			$last_attribute_value = $tank->getStatistics($attribute);
 			?>
 		<tr>
 			<td><?php echo $i; ?></td>
@@ -85,7 +91,6 @@
 			</td>
 		</tr>
 			<?php
-			++$i;
 		}
 		?>
 		</table>

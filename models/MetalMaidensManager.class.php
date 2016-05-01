@@ -457,6 +457,54 @@ class MetalMaidensManager
 		$query->execute();
 	}
 
+	public function getStat_on_attribute_for_id_and_cat( $id, $category, $attribute ) {
+		$category = strtolower($category);
+		$attribute = strtolower($attribute);
+		$allowed_categories = ["all", "atg", "ht", "lav", "lt", "mt", "spg"];
+		$allowed_stats = ["tank", "category", "firepower", "penetration", "durability", "armor", "targeting", "evasion", "stealth", "detection"];
+
+		if (in_array($category, $allowed_categories) && in_array($attribute, $allowed_stats))
+		{
+			$tanks_array = array();
+			$rank = "n/a";
+			$delta_median = "n/a";
+
+			$query = "SELECT * FROM `metal_maidens`";
+
+			if ($category != "all")
+				$query .= " WHERE category = :category";
+			if ($attribute == "stealth" && ($category == "ht" || $category == "atg"))
+				$query .= " ORDER BY stealth asc";
+			else
+				$query .= " ORDER BY " . $attribute . " desc";
+
+			$query = $this->_dbhandler->prepare($query);
+			$query->bindValue(':category', $category);
+			$query->execute();
+
+			while ($data = $query->fetch(PDO::FETCH_ASSOC))
+				$tanks_array[] = new MetalMaiden($data);
+
+			$i = 1;
+			$last_attribute_value = $tanks_array[0]->getStatistics($attribute);
+			foreach ($tanks_array as $tank)
+			{
+				if ($last_attribute_value != $tank->getStatistics($attribute))
+					++$i;
+				$last_attribute_value = $tank->getStatistics($attribute);
+			
+				if ($tank->getId() == $id)
+				{
+					$rank = $i;
+					$delta_median = intval($tank->getStatistics($attribute) - $tanks_array[count($tanks_array) / 2]->getStatistics($attribute));
+				}
+			}
+			return array("rank" => $rank, "delta_median" => $delta_median);
+		}
+
+		return NULL;
+	}
+
 	public function setDbhandler( PDO $dbhandler ) {
 		$this->_dbhandler = $dbhandler;
 	}
