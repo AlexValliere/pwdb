@@ -9,6 +9,24 @@ function cmp_tank_desc($a, $b)
 	return strcmp($a->getTank(), $b->getTank()) * -1;
 }
 
+function cmp_rarity_asc($a, $b)
+{
+	$rarities_table = array("gold" => 3, "purple" => 2, "blue" => 1);
+	if ($a->getRarity() == $b->getRarity())
+		return 0;
+	else
+		return $rarities_table[$a->getRarity()] < $rarities_table[$b->getRarity()] ? -1 : 1;
+}
+
+function cmp_rarity_desc($a, $b)
+{
+	$rarities_table = array("gold" => 3, "purple" => 2, "blue" => 1);
+	if ($a->getRarity() == $b->getRarity())
+		return 0;
+	else
+		return $rarities_table[$a->getRarity()] < $rarities_table[$b->getRarity()] ? 1 : -1;
+}
+
 function cmp_category_asc($a, $b)
 {
 	return strcmp($a->getCategory(), $b->getCategory());

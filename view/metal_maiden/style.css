@@ -48,22 +48,13 @@ table.lifestyle_skills td.icon {
 	color: #ffffff;
 }
 
-.tank_spreadsheet tr:nth-of-type(odd)
+.tank_spreadsheet tr:hover
 {
-	background-color: #272727;
+	background-color: #252525;
 }
 
-.tank_spreadsheet tr:nth-of-type(even)
+.tank_spreadsheet th, .tank_spreadsheet th a
 {
-	background-color: #404040;
-}
-
-.tank_spreadsheet th
-{
-	color: #ffffff;
-}
-
-.tank_spreadsheet a {
 	color: #ffffff;
 }
 
@@ -172,4 +163,21 @@ span.label.label-danger.tank_req {
 
 .stat_delta_median {
 	color: #4CAF50;
+}
+
+img.statistics-filter-icon {
+	height: 37px;
+}
+
+div.statistics-filter-icon {
+	display: inline-block;
+	opacity: 0.5;
+}
+
+div.statistics-filter-icon.selected {
+	opacity: 1;
+}
+
+.statistics-current-category-icon {
+	height: 2em;
 }

@@ -16,7 +16,12 @@
 	else if (get_route() == "statistics")
 	{
 		if (isset($_GET["category"]))
-			echo '<li><a href="index.php?route=statistics">Statistics</a></li><li>' . strtoupper(htmlentities($_GET["category"])) . '</li>';
+		{
+			if (in_array(strtolower($_GET["category"]), ["atg", "ht", "lav", "lt", "mt", "spg"]))
+				echo '<li><a href="index.php?route=statistics">Statistics</a></li><li>' . strtoupper(htmlentities($_GET["category"])) . '</li>';
+			else
+				echo '<li><a href="index.php?route=statistics">Statistics</a></li><li>ATG</li>';
+		}
 		else
 			echo '<li>Statistics</li>';
 	}

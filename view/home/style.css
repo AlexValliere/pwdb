@@ -1,9 +1,15 @@
+.anchor	{
+	display: block;
+	height: 50px; /*same height as header*/
+	margin-top: -50px; /*same height as header*/
+	visibility: hidden;
+}
+
 #metal_maidens_index .nation		{
 	text-align: center;
 	font-size: x-large;
 	background-color: #000000;
 }
-#metal_maidens_index .nation img	{ width: 75px; }
 
 #metal_maidens_index img.portrait	{
 	border-width: 1px;

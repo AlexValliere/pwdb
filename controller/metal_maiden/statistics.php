@@ -1,5 +1,6 @@
 <?php
 $allowed_categories = ["atg", "ht", "lav", "lt", "mt", "spg"];
+$allowed_nations = ["bavaria", "britannia", "freedonia", "gallia", "rossiya"];
 
 if (isset($_GET['category']) && in_array($_GET['category'], $allowed_categories))		{ $category = $_GET['category']; }
 else																					{ $category = 'atg'; }

@@ -1,4 +1,20 @@
-<p>Get statistics about : <?php foreach($allowed_categories as $value) echo "<a href='index.php?route=statistics&amp;category=" . $value . "'>" . strtoupper($value) . "</a> "; ?></p>
+<p>Get statistics about :</p>
+<?php
+foreach($allowed_categories as $value)
+{
+	?>
+	<div class="statistics-filter-icon<?php if ($value == $category) echo " selected"; ?>">
+		<a href="index.php?route=statistics&amp;category=<?php echo $value; ?>">
+			<img
+				src="<?php echo RESSOURCES_DIR . "tank_categories/" . $value; ?>.png"
+				alt="<?php echo $category; ?> icon"
+				class="statistics-filter-icon"
+			/>
+		</a>
+	</div>
+	<?php
+}
+?>
 
 <br />
 
@@ -11,7 +27,7 @@
 
 		<table class="table table-responsive table-bordered">
 		<tr>
-			<th></th>
+			<th><img src="<?php echo RESSOURCES_DIR . "tank_categories/" . $category; ?>.png" alt="<?php echo $category; ?> icon" class="statistics-current-category-icon" /></th>
 			<th colspan="4">Values</th>
 		</tr>
 		<tr>
@@ -49,7 +65,8 @@
 	<div class="col-sm-6 col-md-4 col-lg-3">
 		<table class="table table-responsive table-bordered">
 		<tr>
-			<th colspan="4"><?php echo ucfirst($attribute); ?></th>
+			<th><img src="<?php echo RESSOURCES_DIR . "tank_categories/" . $category; ?>.png" alt="<?php echo $category; ?> icon" class="statistics-current-category-icon" /></th>
+			<th colspan="3"><?php echo ucfirst($attribute); ?></th>
 		</tr>
 		<tr>
 			<th>Rank</th>

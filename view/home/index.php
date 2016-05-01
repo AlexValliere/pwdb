@@ -3,21 +3,45 @@ $tank_list = $metalMaidensManager->getCategory_nation_list("ht", "britannia");
 ?>
 <section id="metal_maidens_index">
 	<h1 class="page-header">Metal Maidens list</h1>
-	<p>Indexed tanks : <?php echo $tank_indexed; ?> out of <?php echo $tank_total; ?></p>
 
-	<?php include_once("layouts/export_to_wiki.php"); ?>
+	<div class="row">
+		<div class="col-lg-2">
+			<p>Indexed tanks : <?php echo $tank_indexed; ?> out of <?php echo $tank_total; ?></p>
+			<?php //include_once("layouts/export_to_wiki.php"); ?>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-lg-8">
+			<p>Go to : </p>
+			<?php
+			foreach ($nations as $nation)
+			{
+				?>
+				<a href="index.php#<?php echo $nation; ?>">
+					<img
+						src="<?php echo RESSOURCES_DIR . "/national_flags/".$nation.".png"; ?>"
+						alt="<?php echo $nation; ?> national flag"
+						class="statistics-filter-icon"
+					/>
+				</a>
+				<?php
+			}
+			?>
+		</div>
+	</div>
+
+	<br />
 
 	<?php
 	foreach ($nations as $nation)
 	{
 		?>
+		<span class="anchor" id="<?php echo $nation; ?>"></span>
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-lg-8 col-lg-offset-2 nation">
 				<img
 					src="<?php echo RESSOURCES_DIR . "/national_flags/" . $nation; ?>.png"
 					alt="<?php echo $nation; ?> national flag"
 				/>
-				<?php echo "<span id='" . $nation . "'>" . ucfirst($nation) . "</span>"; ?>
+				<?php echo ucfirst($nation); ?>
 				<img
 					src="<?php echo RESSOURCES_DIR . "/national_flags/" . $nation; ?>.png"
 					alt="<?php echo $nation; ?> national flag"

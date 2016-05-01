@@ -7,8 +7,15 @@
 
 		<p style="float: right; text-align: right;">Created on : <?php echo $tank->getCreated_on(); ?><br />Last updated : <?php echo $tank->getUpdated_on(); ?></p>
 
+		<?php
+		if (current_user_has_roles(explode(',', "user")))
+		{
+			?>
 		<a href="index.php?route=edit_metal_maiden&amp;tank=<?php echo $tank->getTank_slug(); ?>"><button type="button">Edit this page</button></a>
 		<a href="index.php?route=edit_metal_maiden_requirements&amp;tank=<?php echo $tank->getTank_slug(); ?>"><button type="button">Edit requirements</button></a>
+			<?php
+		}
+		?>
 		<?php include("layouts/export_to_wiki.php"); ?>
 
 		<div class="row">

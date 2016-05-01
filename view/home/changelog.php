@@ -1,3 +1,17 @@
+<h3>May 2, 2016 01:20 GMT+1</h3>
+<p>
+- Update User Interface and User Experience :<br />
+-- Added filter icons on statistics page<br />
+-- Added anchor links to metal maidens index list<br />
+-- Updated table colors on spreadsheet page to match with statistics page<br />
+-- Colored active sort option on spreadsheet page<br />
+-- Added icons for tank categories to spreadsheet page<br />
+-- Added background-color when hovering a line from the table on spreadsheet page<br />
+-- Removed unavailable actions (edit buttons on metal maiden pages) for visitors without roles<br />
+-- Added more screen resolution support for metal maidens page, index page and statistics page<br />
+- Added tank rarity to spreadsheet page
+</p>
+
 <h3>May 1, 2016 20:15 GMT+1</h3>
 <p>
 - Updated how rank are calculated on <a href="index.php?route=statistics">statistics page</a> (Tanks with same attribute value with have the same rank now).<br />

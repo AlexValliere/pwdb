@@ -1,11 +1,13 @@
-For public release / short term road :
+Public release :
 - Rename project to Metal Maiden Depot - www.metalmaidendepot.ovh OK
 - Searchbar: tanks, categories, nations OK
 - Rank and delta medians for each attributes on metal maidens pages OK
 - More screen resolution supports OK
-- Filtering options like nation, rarity, blueprint level to stats, spreadsheet and homepage
-- Update User Interface and User Experience
+- Update User Interface and User Experience OK
 - Add Google Analytics OK
+
+Short term road :
+- Filtering options like nation, rarity, blueprint level to stats, spreadsheet and homepage
 
 Long term road :
 - Add function to create new zip file for reddit flairs instead of commenting/uncommenting code
