@@ -8,7 +8,7 @@
 	foreach ($attributes_array as $attribute)
 	{
 		?>
-		<div class="col-xs-12 col-md-4 col-lg-4">
+		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 			<div class="table-responsive">
 				<table class="table table-bordered statistic">
 					<tr>
@@ -30,7 +30,7 @@
 	foreach ($statistics_hidden_array as $attribute)
 	{
 		?>
-		<div class="col-xs-12 col-md-4 col-lg-4">
+		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 			<div class="table-responsive">
 				<table class="table table-bordered statistic">
 					<tr>

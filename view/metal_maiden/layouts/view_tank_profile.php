@@ -1,4 +1,4 @@
-<div class="col-lg-2">
+<div class="col-xs-12 col-sm-3 col-lg-2">
 	<img
 		src="<?php echo TANK_IMAGE_DIR . "/portrait/" . $tank->getImagename(); ?>.png"
 		alt="<?php echo $tank->getTank(); ?> portrait"
@@ -7,7 +7,7 @@
 	<p><?php echo $tank->getName(); ?></p>
 </div>
 
-<div class="col-lg-2">
+<div class="col-xs-12 col-sm-3 col-lg-2">
 	<p>
 		<strong>Category :</strong>
 			<img

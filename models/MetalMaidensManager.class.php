@@ -473,7 +473,7 @@ class MetalMaidensManager
 
 			if ($category != "all")
 				$query .= " WHERE category = :category";
-			if ($attribute == "stealth" && ($category == "ht" || $category == "atg"))
+			if ($attribute == "stealth" && ($category == "ht"))
 				$query .= " ORDER BY stealth asc";
 			else
 				$query .= " ORDER BY " . $attribute . " desc";

@@ -46,7 +46,7 @@
 	foreach ($attributes as $attribute)
 	{
 		?>
-	<div class="col-lg-3">
+	<div class="col-sm-6 col-md-4 col-lg-3">
 		<table class="table table-responsive table-bordered">
 		<tr>
 			<th colspan="4"><?php echo ucfirst($attribute); ?></th>

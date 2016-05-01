@@ -71,7 +71,7 @@ foreach ($attributes as $attribute)
 	$average_stats[$attribute] /= $tank_list_size;
 	$tank_list_sorted_by[$attribute] = $tank_list;
 
-	if (($category == "ht" || $category == "atg") && $attribute == "stealth")
+	if (($category == "ht") && $attribute == "stealth")
 		usort($tank_list_sorted_by[$attribute], 'cmp_' . $attribute . '_asc');
 	else
 		usort($tank_list_sorted_by[$attribute], 'cmp_' . $attribute . '_desc');
