@@ -1,3 +1,10 @@
+<h3>May 2, 2016 16:05 GMT+1</h3>
+<p>
+- Fixed a display issue on mobile with naval port, refactor and BWMG section on metal maiden pages
+</p>
+
+<hr />
+
 <h3>May 2, 2016 01:20 GMT+1</h3>
 <p>
 - Update User Interface and User Experience :<br />
@@ -12,9 +19,11 @@
 - Added tank rarity to spreadsheet page
 </p>
 
+<hr />
+
 <h3>May 1, 2016 20:15 GMT+1</h3>
 <p>
-- Updated how rank are calculated on <a href="index.php?route=statistics">statistics page</a> (Tanks with same attribute value with have the same rank now).<br />
+- Updated how rank are calculated on <a href="index.php?route=statistics">statistics page</a> (Tanks with same attribute value will have the same rank now).<br />
 - Added attribute rank and delta median values to metal maidens pages (May require a hard reload (ctrl + F5) the first time to display properly the new Metal Maiden information pages).
 </p>
 

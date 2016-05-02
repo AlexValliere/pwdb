@@ -114,7 +114,7 @@ img.tank_req_item {
 }
 
 img.tank_req {
-	height: 150px;
+	max-height: 150px;
 }
 
 .tank_req img.slot {

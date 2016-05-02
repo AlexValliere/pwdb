@@ -4,21 +4,13 @@
 	{
 		?>
 	<div class="col-lg-12 tank_req">
-		<div class="media">
-			<div class="media-left">
-				<a href="#">
-					<img
-						class="media-object tank_req"
-						src="<?php echo RESSOURCES_DIR . 'supply/bwmg.png'; ?>"
-						alt="BWMG Depot image"
-					/>
-				</a>
-			</div>
-			<div class="media-body">
-				<h4 class="media-heading page-header">Refactor</h4>
-				<p>Appears in BWMG Depot LV<?php echo $tank->getRefactor(); ?></p>
-			</div>
-		</div>
+		<h4 class="media-heading page-header">Refactor</h4>
+		<p>Appears in BWMG Depot LV<?php echo $tank->getRefactor(); ?></p>
+		<img
+			class="img-responsive tank_req"
+			src="<?php echo RESSOURCES_DIR . 'supply/bwmg.png'; ?>"
+			alt="BWMG Depot image"
+		/>
 	</div>
 		<?php
 	}
@@ -28,23 +20,14 @@
 	{
 		?>
 	<br />
-
 	<div class="col-lg-12 tank_req">
-		<div class="media">
-			<div class="media-left">
-				<a href="#">
-					<img
-						class="media-object tank_req"
-						src="<?php echo RESSOURCES_DIR . 'supply/naval_port.png'; ?>"
-						alt="Naval Port image"
-					/>
-				</a>
-			</div>
-			<div class="media-body">
-				<h4 class="media-heading page-header">Naval Port</h4>
-				<p>Requires Naval Port LV<?php echo $tank->getNaval_port(); ?></p>
-			</div>
-		</div>
+		<h4 class="media-heading page-header">Naval Port</h4>
+		<p>Requires Naval Port LV<?php echo $tank->getNaval_port(); ?></p>
+		<img
+			class="img-responsive tank_req"
+			src="<?php echo RESSOURCES_DIR . 'supply/naval_port.png'; ?>"
+			alt="Naval Port image"
+		/>
 	</div>
 		<?php
 	}
@@ -56,21 +39,13 @@
 	<br />
 
 	<div class="col-lg-12 tank_req">
-		<div class="media">
-			<div class="media-left">
-				<a href="#">
-					<img
-						class="media-object tank_req"
-						src="<?php echo RESSOURCES_DIR . 'supply/source_forge.png'; ?>"
-						alt="Source Forge image"
-					/>
-				</a>
-			</div>
-			<div class="media-body">
-				<h4 class="media-heading page-header">Source Forge</h4>
-				<p>Can be obtained at Source Forge</p>
-			</div>
-		</div>
+		<h4 class="media-heading page-header">Source Forge</h4>
+		<p>Can be obtained at Source Forge</p>
+		<img
+			class="img-responsive tank_req"
+			src="<?php echo RESSOURCES_DIR . 'supply/source_forge.png'; ?>"
+			alt="Source Forge image"
+		/>
 	</div>
 	<?php
 	}
