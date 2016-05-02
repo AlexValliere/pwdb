@@ -7,6 +7,7 @@ Public release :
 - Add Google Analytics OK
 
 Short term road :
+- Add possibility to highlight a tank in the statistics page 
 - Filtering options like nation, rarity, blueprint level to stats, spreadsheet and homepage
 
 Long term road :
