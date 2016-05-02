@@ -8,7 +8,7 @@ foreach($allowed_categories as $value)
 			<img
 				src="<?php echo RESSOURCES_DIR . "tank_categories/" . $value; ?>.png"
 				alt="<?php echo $category; ?> icon"
-				class="statistics-filter-icon"
+				class="img-responsive statistics-filter-icon"
 			/>
 		</a>
 	</div>
@@ -25,33 +25,35 @@ foreach($allowed_categories as $value)
 		
 		<br />
 
-		<table class="table table-responsive table-bordered">
-		<tr>
-			<th><img src="<?php echo RESSOURCES_DIR . "tank_categories/" . $category; ?>.png" alt="<?php echo $category; ?> icon" class="statistics-current-category-icon" /></th>
-			<th colspan="4">Values</th>
-		</tr>
-		<tr>
-			<th>Attributes</th>
-			<th>Minimal</th>
-			<th>Average</th>
-			<th>Median</th>
-			<th>Maximal</th>
-		</tr>
-		<?php
-		foreach ($attributes as $attribute)
-		{
-			?>
-		<tr>
-			<td><?php echo ucfirst($attribute); ?></td>
-			<td><?php echo $min_stats[$attribute]; ?></td>
-			<td><?php echo intval($average_stats[$attribute]); ?></td>
-			<td><?php echo $median_stats[$attribute]; ?></td>
-			<td><?php echo $max_stats[$attribute]; ?></td>
-		</tr>
+		<div class="table-responsive">
+			<table class="table table-bordered">
+			<tr>
+				<th><img src="<?php echo RESSOURCES_DIR . "tank_categories/" . $category; ?>.png" alt="<?php echo $category; ?> icon" class="img-responsive statistics-current-category-icon" /></th>
+				<th colspan="4">Values</th>
+			</tr>
+			<tr>
+				<th>Attributes</th>
+				<th>Minimal</th>
+				<th>Average</th>
+				<th>Median</th>
+				<th>Maximal</th>
+			</tr>
 			<?php
-		}
-		?>
-		</table>
+			foreach ($attributes as $attribute)
+			{
+				?>
+			<tr>
+				<td><?php echo ucfirst($attribute); ?></td>
+				<td><?php echo $min_stats[$attribute]; ?></td>
+				<td><?php echo intval($average_stats[$attribute]); ?></td>
+				<td><?php echo $median_stats[$attribute]; ?></td>
+				<td><?php echo $max_stats[$attribute]; ?></td>
+			</tr>
+				<?php
+			}
+			?>
+			</table>
+		</div>
 	</div>
 </div>
 
@@ -63,9 +65,9 @@ foreach($allowed_categories as $value)
 	{
 		?>
 	<div class="col-sm-6 col-md-4 col-lg-3">
-		<table class="table table-responsive table-bordered">
+		<table class="table table-bordered">
 		<tr>
-			<th><img src="<?php echo RESSOURCES_DIR . "tank_categories/" . $category; ?>.png" alt="<?php echo $category; ?> icon" class="statistics-current-category-icon" /></th>
+			<th><img src="<?php echo RESSOURCES_DIR . "tank_categories/" . $category; ?>.png" alt="<?php echo $category; ?> icon" class="img-responsive statistics-current-category-icon" /></th>
 			<th colspan="3"><?php echo ucfirst($attribute); ?></th>
 		</tr>
 		<tr>
